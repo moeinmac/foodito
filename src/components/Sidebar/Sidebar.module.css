@@ -1,0 +1,10 @@
+.sidebar{
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.sidebar-icon{
+  font-size: 1.8rem;
+  cursor: pointer;
+}
