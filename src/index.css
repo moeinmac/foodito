@@ -20,6 +20,7 @@
 body{
   min-height:  100vh;
   color : var(--t-color);
+  background-color: var(--bg-color);
 }
 #root{
   display: grid;

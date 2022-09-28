@@ -1,8 +1,11 @@
+import Header from './Header/Header';
 import styles from './Main.module.css';
 
 const Main = props =>{
   return(
-    <div>Main</div>
+    <main className={styles.main}>
+      <Header />
+    </main>
   )
 }
 

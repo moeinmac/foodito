@@ -1,0 +1,37 @@
+.header {
+  display: flex;
+  padding: 1.5rem;
+}
+
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 1rem;
+  position: relative;
+}
+.header-top .search {
+  position: absolute;
+  left: 10px;
+  color: #8e8e8e;
+}
+.header-top input {
+  width: 83%;
+  font-size: 1rem;
+  padding: 0.7rem 1.3rem;
+  padding-left: 2.2rem;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  font-family: "Nunito";
+}
+.header-top .sliders {
+  color: #fff;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background-color: var(--b-color);
+  padding: .5em;
+  cursor: pointer;
+}
