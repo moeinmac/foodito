@@ -1,0 +1,26 @@
+.mealsItem{
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, .25);
+}
+.mealsItem-img{
+  width: 50vw;
+}
+.mealsItem-img img{max-width: 100%;}
+.mealsItem-detail{
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  padding-right: 1rem;
+}
+.mealsItem-detail .title{
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+.mealsItem-detail .toppings{
+  font-family: "Nunito";
+  color: var(--g2-color);
+  font-size: .9rem;
+}

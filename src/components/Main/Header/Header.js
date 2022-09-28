@@ -10,7 +10,6 @@ const Header = props => {
       <div className={styles["header-top"]}>
         <RiSearchLine className={styles.search} />
         <input type="text" placeholder="Search ..." />
-        {/* <div className='ss'>.</div> */}
         <FiSliders className={styles.sliders} />
       </div>
       <FilterMeals />

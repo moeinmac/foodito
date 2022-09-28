@@ -1,0 +1,20 @@
+.meals{
+  display: grid;
+  grid-template-columns: repeat(1,1fr);
+  font-family: "Mitr";
+  padding: 1.5rem;
+  padding-top: 0;
+  gap: 1rem;
+}
+.meals-header{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+.meals-header h2{
+  font-weight: 600;
+}
+.meals-header-icon{
+  font-size: 2rem;
+}

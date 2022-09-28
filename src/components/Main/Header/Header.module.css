@@ -1,6 +1,7 @@
 .header {
   display: flex;
   padding: 1.5rem;
+  padding-top: 0;
   flex-wrap: wrap;
   gap: 1rem;
 }
