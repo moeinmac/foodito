@@ -2,6 +2,7 @@ import styles from './Header.module.css';
 
 import { RiSearchLine } from "react-icons/ri";
 import { FiSliders } from "react-icons/fi";
+import FilterMeals from './FilterMeals';
 
 const Header = props => {
   return (
@@ -12,7 +13,7 @@ const Header = props => {
         {/* <div className='ss'>.</div> */}
         <FiSliders className={styles.sliders} />
       </div>
-      
+      <FilterMeals />
     </header>
   );
 }

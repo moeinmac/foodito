@@ -1,0 +1,9 @@
+.filterMealsItem{
+  background-color: var(--b-color);
+  color: #fff;
+  border-radius: 10px;
+  padding: .5rem .7rem;
+  text-align: center;
+  font-family: "Nunito";
+  cursor: pointer;
+}
