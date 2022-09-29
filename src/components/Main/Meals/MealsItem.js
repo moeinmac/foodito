@@ -1,17 +1,19 @@
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import AddToCartButton from "./AddToCartButton";
 import styles from "./MealsItem.module.css";
 import MyLoader from "../../../UI/MyLoader";
 import { useState } from "react";
+
 const MealsItem = (props) => {
   const [imgLoaded, setImgLoaded] = useState(false);
   const imgLoaderHandler = () => setImgLoaded(true);
 
-  
   return (
     <div className={styles["mealsItem-container"]}>
       {!imgLoaded && <MyLoader />}
-      <div className={styles.mealsItem}>
+      <div
+        className={`${styles.mealsItem} ${
+          !imgLoaded ? styles.imgLoading : ""
+        }`}>
         <div className={styles["mealsItem-img"]}>
           <img src={props.img} alt={props.title} onLoad={imgLoaderHandler} />
         </div>

@@ -1,10 +1,11 @@
 import ContentLoader from "react-content-loader";
 
-import './MyLoader.css'
+import "./MyLoader.css";
 
 const MyLoader = (props) => {
+  const className = `loader ${props.abs === "true" ? "isAbs" : ""}`
   return (
-    <div className={`loader`}>
+    <div className={className}>
       <ContentLoader
         width={"100%"}
         backgroundColor="#CDBFBF"
@@ -19,7 +20,6 @@ const MyLoader = (props) => {
       </ContentLoader>
     </div>
   );
-  
-}
+};
 
 export default MyLoader;

@@ -1,41 +1,15 @@
 import styles from "./Meals.module.css";
 import { BsSliders } from "react-icons/bs";
-import supabase from "./../../../supabase";
-import { useState, useEffect } from "react";
 import MealsItem from "./MealsItem";
 import MyLoader from "../../../UI/MyLoader";
+import useFilterMeals from "../../../hooks/useFilterMeals";
+import { useContext } from "react";
+import MealsContext from "../../../context/MealsContext";
 
 const Meals = (props) => {
-  const [meals, setMeals] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const getMeals = async () => {
-      let { data, error } = await supabase.from("food").select("*");
-      if (data) {
-        setMeals(data);
-        setIsLoading(false);
-      }
-    };
-    getMeals();
-  }, []);
-
-  // const meals = [
-  //   {
-  //     product_id : 0,
-  //     title: "Deluxe Crispy",
-  //     price: 53.6,
-  //     type: "burger",
-  //     img: "https://cgrqgisynruhcspvtobo.supabase.co/storage/v1/object/public/food/burger-5.png",
-  //     toppings: [
-  //       "Crispy Chicken Fillet",
-  //       "Potato Roll",
-  //       "Tomato",
-  //       "Mayonnaise",
-  //       "Lettuce"
-  //     ],
-  //   },
-  // ];
+  const {mealsValue} = useContext(MealsContext)
+  const { meals, loading } = useFilterMeals(mealsValue);
+  
 
   return (
     <div className={styles.meals}>
@@ -43,7 +17,15 @@ const Meals = (props) => {
         <h2>All Items</h2>
         <BsSliders className={styles["meals-header-icon"]} />
       </div>
-      {!isLoading &&
+      {loading && (
+        <>
+          <MyLoader />
+          <MyLoader />
+          <MyLoader />
+          <MyLoader />
+        </>
+      )}
+      {!loading &&
         meals.map((meal) => (
           <MealsItem
             title={meal.title}
@@ -54,14 +36,6 @@ const Meals = (props) => {
             toppings={meal.toppings}
           />
         ))}
-      {isLoading && (
-        <>
-          <MyLoader styles={{ position: "absolute" }} />
-          <MyLoader styles={{ position: "absolute" }} />
-          <MyLoader styles={{ position: "absolute" }} />
-          <MyLoader styles={{ position: "absolute" }} />
-        </>
-      )}
     </div>
   );
 };
