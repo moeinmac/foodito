@@ -3,6 +3,7 @@ import styles from './Header.module.css';
 import { RiSearchLine } from "react-icons/ri";
 import { FiSliders } from "react-icons/fi";
 import FilterMeals from './FilterMeals';
+import CartButton from './CartButton';
 
 const Header = props => {
   return (
@@ -13,6 +14,7 @@ const Header = props => {
         <FiSliders className={styles.sliders} />
       </div>
       <FilterMeals />
+      <CartButton />
     </header>
   );
 }

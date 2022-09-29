@@ -1,0 +1,28 @@
+.fixedCartButton {
+  width: 100%;
+  padding: .7rem 1.3rem !important;
+  border-radius: 25px !important;
+  position: fixed;
+  z-index: 10;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.fixedCartButton span {
+  font-family: "Mitr";
+  font-weight: 700;
+  font-size: 2rem;
+}
+.fixedCartButton div{
+  background-color: #fff;
+  color: var(--b-color);
+  padding: .5rem;
+  border-radius: 15px;
+  font-family: "Nunito";
+  font-weight: 700;
+  font-size: 1.7rem;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}

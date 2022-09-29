@@ -1,4 +1,4 @@
-import styles from "./Button.css";
+import "./Button.css";
 
 const Button = (props) => {
   return (
