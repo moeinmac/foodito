@@ -1,9 +1,13 @@
+.mealsItem-container{
+  position: relative;
+}
 .mealsItem{
   display: flex;
   align-items: center;
   background-color: #fff;
   border-radius: 15px;
   box-shadow: 0 0 4px rgba(0, 0, 0, .25);
+  padding: .5rem;
 }
 .mealsItem-img{
   width: 50vw;
@@ -13,7 +17,6 @@
   display: flex;
   flex-direction: column;
   gap: .5rem;
-  padding-right: 1rem;
 }
 .mealsItem-detail .title{
   font-weight: 600;
