@@ -17,17 +17,13 @@ const Meals = (props) => {
         <h2>All Items</h2>
         <BsSliders className={styles["meals-header-icon"]} />
       </div>
-      {loading && (
-        <>
-          <MyLoader />
-          <MyLoader />
-          <MyLoader />
-          <MyLoader />
-        </>
-      )}
+      {loading && meals.map((key)=>(<MealsItem isLoading={true} key={key}>
+        <MyLoader />
+      </MealsItem>))}
       {!loading &&
         meals.map((meal) => (
           <MealsItem
+            isLoading={false}
             title={meal.title}
             key={meal["product_id"]}
             price={meal.price}

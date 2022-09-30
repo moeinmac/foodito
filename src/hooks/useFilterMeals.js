@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import supabase from "../supabase";
 
 const useFilterMeals = (value) => {
-  const [meals, setMeals] = useState([]);
+  const [meals, setMeals] = useState([0, 1, 2, 3]);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     const getMeals = async () => {
@@ -13,6 +13,8 @@ const useFilterMeals = (value) => {
           setMeals(data);
         }
       } else {
+        setLoading(true);
+        setMeals([0, 1, 2, 3]);
         let { data, error } = await supabase
           .from("food")
           .select("*")
