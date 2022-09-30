@@ -7,7 +7,7 @@ const useFilterMeals = (value) => {
   useEffect(() => {
     const getMeals = async () => {
       if (value === "all") {
-        let { data, error } = await supabase.from("food").select("*");
+        let { data } = await supabase.from("food").select("*");
         if (data) {
           setLoading(false);
           setMeals(data);
@@ -15,7 +15,7 @@ const useFilterMeals = (value) => {
       } else {
         setLoading(true);
         setMeals([0, 1, 2, 3]);
-        let { data, error } = await supabase
+        let { data } = await supabase
           .from("food")
           .select("*")
           .eq("type", value);

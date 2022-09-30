@@ -9,7 +9,6 @@ import MealsContext from "../../../context/MealsContext";
 const Meals = (props) => {
   const {mealsValue} = useContext(MealsContext)
   const { meals, loading } = useFilterMeals(mealsValue);
-  
 
   return (
     <div className={styles.meals}>

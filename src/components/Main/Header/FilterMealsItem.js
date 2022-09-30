@@ -4,7 +4,7 @@ import { useContext } from "react";
 import MealsContext from "../../../context/MealsContext";
 
 const FilterMealsItem = (props) => {
-  const { mealsFilter , mealsValue } = useContext(MealsContext);
+  const { mealsFilter  } = useContext(MealsContext);
   const filterMealsHandler = () => {
     mealsFilter(props.title.toLowerCase())
   };

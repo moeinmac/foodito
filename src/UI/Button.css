@@ -1,10 +1,10 @@
-.button{
+.button {
   outline: none;
   border: none;
   background-color: var(--b-color);
   color: #fff;
   font-family: "Nunito";
-  padding: .5em 1rem;
+  padding: 0.5rem 1rem;
   border-radius: 10px;
   cursor: pointer;
 }

@@ -1,16 +1,18 @@
-import styles from './Sidebar.module.css';
+import styles from "./Sidebar.module.css";
 
-import Profile from './Profile';
+import Profile from "./Profile";
+import SidebarMenu from "./SidebarMenu/SidebarMenu";
+import UserProvider from "../../context/UserProvider";
 
-import { GrUserSettings } from "react-icons/gr";
-
-const Sidebar = props => {
+const Sidebar = (props) => {
   return (
-    <aside className={styles.sidebar}>
-      <Profile />
-      <GrUserSettings className={styles["sidebar-icon"]}/>
-    </aside>
-  )
-}
+    <UserProvider>
+      <aside className={styles.sidebar}>
+        <Profile />
+        <SidebarMenu />
+      </aside>
+    </UserProvider>
+  );
+};
 
-export default Sidebar
+export default Sidebar;
