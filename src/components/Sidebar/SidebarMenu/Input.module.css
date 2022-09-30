@@ -1,0 +1,42 @@
+.input {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.5em;
+  font-family: "Nunito";
+}
+
+.input-detail {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 0.5rem;
+  padding: 0 1rem;
+  position: relative;
+}
+.input-detail input {
+  border: none;
+  border-bottom: 2px solid var(--b-color);
+  outline: none;
+  font-size: 1.1rem;
+  padding: 0.5rem 0rem;
+  width: 100%;
+}
+.input-detail label {
+  position: absolute;
+  font-size: 1.1rem;
+  pointer-events: none;
+  transition: all 0.5s;
+  top: 50%;
+  transform: translate(0, -50%);
+  left: 1rem;
+}
+.input .input-detail input:focus ~ label,
+.input .input-detail input:valid ~ label {
+  transform: translate(0);
+  top: -12px;
+  left: 1rem;
+  color: var(--b-color);
+  font-size: 14px;
+}
