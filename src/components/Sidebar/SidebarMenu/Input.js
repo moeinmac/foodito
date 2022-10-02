@@ -1,18 +1,22 @@
 import styles from "./Input.module.css";
 
 const Input = (props) => {
-  const inValid = false;
   return (
     <div className={styles.input}>
       <div className={styles["input-detail"]}>
         <input
           type={props.type}
-          className={inValid ? "invalid" : ""}
+          className={props.data.inValid ? styles["invalid-input"] : ""}
           required
+          onChange={props.data.inputChangeHandler}
+          onBlur={props.data.inputBlurHandler}
+          value={props.data.value}
         />
-        <label>{props.label}</label>
+        <label className={props.data.inValid ? styles["invalid-label"] : ""}>
+          {props.label}
+        </label>
       </div>
-      {inValid && (
+      {props.data.inValid && (
         <p className={styles["error-message"]}>{props.errorMessage}</p>
       )}
     </div>

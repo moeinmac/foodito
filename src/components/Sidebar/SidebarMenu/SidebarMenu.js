@@ -9,12 +9,11 @@ import Auth from "./Auth";
 const SidebarMenu = (props) => {
   const user = useContext(UserContext);
   const [auth, toggleAuth] = useState(false);
-
   const authToggleHandler = () => toggleAuth(!auth);
 
   return (
     <div className={styles.sidebarMenu}>
-      {auth && <Auth onClose={authToggleHandler} />}
+      {auth && !user.isLoggedIn && <Auth onClose={authToggleHandler} />}
       {user.isLoggedIn && (
         <GrUserSettings className={styles["sidebarMenu-icon"]} />
       )}

@@ -1,27 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Mitr:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mitr:wght@400;500;600;700&display=swap");
 
-
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: inherit;
 }
-:root{
-  /* font-size: 62.5%; */
-  --bg-color : #EAEAEA;
-  --b-color : #5B69EE;
-  --b2-color : #A4ADF3;
-  --g-color : #B9BAC7;
-  --g2-color : #CDBFBF;
-  --t-color : #323142;
+:root {
+  --bg-color: #eaeaea;
+  --b-color: #5b69ee;
+  --b2-color: #a4adf3;
+  --g-color: #b9bac7;
+  --g2-color: #cdbfbf;
+  --t-color: #323142;
 }
-body{
-  min-height:  100vh;
-  color : var(--t-color);
+body {
+  min-height: 100vh;
+  color: var(--t-color);
   background-color: var(--bg-color);
 }
-#root{
+#root {
   display: grid;
 }
