@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 const GetProfile = (props) => {
   const [userProfile, setUserProfile] = useState(false);
+
   useEffect(() => {
     const send = async () => {
       let { data } = await supabase
@@ -13,7 +14,7 @@ const GetProfile = (props) => {
       if (data) setUserProfile(data);
     };
     send();
-  }, []);
+  }, [props.user]);
 
   return (
     userProfile && (

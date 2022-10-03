@@ -4,7 +4,7 @@ import Modal from "../../../UI/Modal";
 import Button from "../../../UI/Button";
 import useInput from "../../../hooks/useInput";
 
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import UserContext from "../../../context/UserContext";
 
 import Input from "./Input";
@@ -16,13 +16,17 @@ const Auth = (props) => {
   const formIsValid = email.isValid && password.isValid;
 
   const user = useContext(UserContext);
+  const userLogin = () => user.loginHandler(email.value, password.value);
+  const userSignup = () => user.signupHandler(email.value, password.value);
 
-  const userLogin = (event) => user.loginHandler(email.value, password.value);
+  const [loginForm, setLoginForm] = useState(true);
+  const loginFormHandler = () => setLoginForm(!loginForm);
 
   return (
     <Modal onClose={props.onClose} className={styles.auth}>
       <div className={styles["auth-header"]}>
-        <h1>Welcome Back</h1>
+        {loginForm && <h1>Welcome Back</h1>}
+        {!loginForm && <h1>Hello Friend!</h1>}
       </div>
       <div className={styles.inputs}>
         <Input
@@ -43,12 +47,34 @@ const Auth = (props) => {
           Email or Password is Incorrect!
         </p>
       )}
-      <Button
-        className={styles.button}
-        disabled={!formIsValid}
-        onClick={userLogin}>
-        SIGN IN
-      </Button>
+      <div className={styles["button-container"]}>
+        {loginForm && (
+          <>
+            <Button
+              className={styles.button}
+              disabled={!formIsValid}
+              onClick={userLogin}>
+              SIGN IN
+            </Button>
+            <p onClick={loginFormHandler}>
+              Have'nt an account? <span>SIGNUP</span>
+            </p>
+          </>
+        )}
+        {!loginForm && (
+          <>
+            <Button
+              className={styles.button}
+              disabled={!formIsValid}
+              onClick={userSignup}>
+              SIGN UP
+            </Button>
+            <p onClick={loginFormHandler}>
+              already have an account? <span>SIGN IN</span>
+            </p>
+          </>
+        )}
+      </div>
     </Modal>
   );
 };
