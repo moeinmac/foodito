@@ -6,3 +6,22 @@
   border-radius: 0.5rem;
   color: #fff;
 }
+.logout {
+  font-family: "Nunito";
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logout-check {
+  display: flex;
+  gap: 0.5rem;
+}
+.logout-confirm {
+  background-color: limegreen;
+}
+.logout-cancel {
+  background-color: crimson;
+}
+.icon {
+  color: var(--b2-color);
+}

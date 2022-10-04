@@ -58,10 +58,13 @@ const UserProvider = (props) => {
     authUser();
   };
 
+  const signoutHandler = () => setIsLoggedIn(false);
+
   const userCtx = {
     isLoggedIn: localStorage.getItem("user") ? true : isLoggedIn,
     loginHandler,
     signupHandler,
+    signoutHandler,
     data,
     error,
   };

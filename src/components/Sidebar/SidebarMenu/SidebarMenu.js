@@ -33,11 +33,11 @@ const SidebarMenu = (props) => {
           onClick={authToggleHandler}
         />
       )}
-      {props.account && (
+      {props.account && user.isLoggedIn && (
         <>
           <EditProfile />
           <ChangePassword />
-          <Logout />
+          <Logout onAccount={props.onAccount} />
         </>
       )}
     </div>
