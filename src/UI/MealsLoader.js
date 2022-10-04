@@ -1,6 +1,6 @@
 import ContentLoader from "react-content-loader";
 
-import "./MealsLoader.css";
+import "./Loader.css";
 
 const MealsLoader = (props) => {
   return (

@@ -32,9 +32,12 @@ const UserProvider = (props) => {
   };
 
   const signupHandler = (email, password) => {
-    const createUser = (id) => {
+    const createUser = (id, email) => {
       const send = async () => {
-        const { data } = await supabase.from("user").insert([{ id }]);
+        const { error } = await supabase
+          .from("user")
+          .insert([{ id, email, name: email.split("@").shift() }]);
+        if (error) console.log(error);
       };
       send();
     };

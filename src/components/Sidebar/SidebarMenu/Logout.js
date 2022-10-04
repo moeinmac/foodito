@@ -5,7 +5,7 @@ import styles from "./SidebarMenuItem.module.css";
 
 import Button from "../../../UI/Button";
 
-import { GrCheckmark, GrSend } from "react-icons/gr";
+import { GrCheckmark } from "react-icons/gr";
 import { GrClose } from "react-icons/gr";
 
 import supabase from "../../../supabase";

@@ -5,3 +5,6 @@
   position: absolute;
   z-index: 2;
 }
+.account-loader {
+  height: 130px;
+}
