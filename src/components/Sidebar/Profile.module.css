@@ -29,3 +29,12 @@
   font-weight: 600;
   letter-spacing: 1px;
 }
+.account {
+  width: 100%;
+  align-items: center;
+}
+.close {
+  font-size: 1.8rem;
+  margin: 0 0 0 auto;
+  cursor: pointer;
+}

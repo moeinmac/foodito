@@ -1,0 +1,8 @@
+.sidebar-menuitem {
+  font-family: "Nunito";
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background-color: var(--b2-color);
+  border-radius: 0.5rem;
+  color: #fff;
+}

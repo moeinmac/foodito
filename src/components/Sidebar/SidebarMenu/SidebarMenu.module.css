@@ -1,4 +1,11 @@
-.sidebarMenu-icon{
+.sidebarMenu-icon {
   font-size: 1.8rem;
   cursor: pointer;
+}
+
+.account {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 0.5rem;
 }

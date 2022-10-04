@@ -1,6 +1,17 @@
-.sidebar{
+.sidebar {
   padding: 1.5rem;
+  padding-bottom: 0;
+  margin-bottom: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.account {
+  background-color: #fff;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 1.5rem;
+  border-radius: 0 0 1rem 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding-bottom: 1.5rem;
 }
