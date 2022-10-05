@@ -19,7 +19,6 @@ const Logout = (props) => {
   const logoutHandler = async () => {
     let { error } = await supabase.auth.signOut();
     user.signoutHandler();
-    localStorage.removeItem("user");
     props.onAccount();
   };
 

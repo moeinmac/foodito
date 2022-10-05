@@ -8,10 +8,13 @@ const UserProvider = (props) => {
   const [error, setUserError] = useState(false);
 
   const getAccountData = async (user_id) => {
-    let { data } = await supabase.from("user").select("*").eq("id", user_id.id);
-    if (data) {
-      setUserData(data);
-    }
+    console.log(user_id);
+    let { data, error } = await supabase
+      .from("user")
+      .select("*")
+      .eq("id", user_id);
+    if (data) setUserData(data);
+    if (error) console.log(error);
   };
 
   useEffect(() => {
@@ -27,7 +30,7 @@ const UserProvider = (props) => {
       });
       if (user) {
         getAccountData(user.id);
-        localStorage.setItem("user", JSON.stringify({ id: user.id }));
+        localStorage.setItem("user", user.id);
         setIsLoggedIn(true);
       }
       if (error) {
@@ -57,7 +60,7 @@ const UserProvider = (props) => {
       });
       if (user) {
         createUser(user.id, user.email);
-        localStorage.setItem("user", JSON.stringify({ id: user.id }));
+        localStorage.setItem("user", user.id);
         setIsLoggedIn(true);
       }
       if (error) {
@@ -68,7 +71,11 @@ const UserProvider = (props) => {
     authUser();
   };
 
-  const signoutHandler = () => setIsLoggedIn(false);
+  const signoutHandler = () => {
+    setIsLoggedIn(false);
+    setUserData(false);
+    localStorage.removeItem("user");
+  };
   const dataHandler = (newData) => setUserData(newData);
 
   const userCtx = {

@@ -43,9 +43,7 @@ const Auth = (props) => {
         />
       </div>
       {user.error && (
-        <p className={styles["error-message"]}>
-          Email or Password is Incorrect!
-        </p>
+        <p className={styles["error-message"]}>{user.error.message}</p>
       )}
       <div className={styles["button-container"]}>
         {loginForm && (
