@@ -1,19 +1,11 @@
 import styles from "./Profile.module.css";
-import supabase from "../../supabase";
 import { useEffect, useState } from "react";
 
 const GetProfile = (props) => {
   const [userProfile, setUserProfile] = useState(false);
 
   useEffect(() => {
-    const send = async () => {
-      let { data } = await supabase
-        .from("user")
-        .select("*")
-        .eq("id", props.user.id);
-      if (data) setUserProfile(data);
-    };
-    send();
+    if (props.user) setUserProfile(props.user);
   }, [props.user]);
 
   return (

@@ -6,6 +6,7 @@ const UserContext = React.createContext({
   signupHandler: (email, password) => {},
   signoutHandler: () => {},
   data: {},
+  dataHandler: (newData) => {},
   error: false,
 });
 

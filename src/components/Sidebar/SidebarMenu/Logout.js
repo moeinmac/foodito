@@ -29,12 +29,12 @@ const Logout = (props) => {
         <p>Are You Sure ?</p>
         <div className={styles["logout-check"]}>
           <Button className={styles["logout-confirm"]} onClick={logoutHandler}>
-            Yes <GrCheckmark className={styles["icon"]} />
+            Yes <GrCheckmark />
           </Button>
           <Button
             className={styles["logout-cancel"]}
             onClick={logoutConfirmHandler}>
-            No <GrClose className={styles["icon"]} />
+            No <GrClose />
           </Button>
         </div>
       </div>

@@ -16,6 +16,9 @@ const SidebarMenu = (props) => {
   const [auth, toggleAuth] = useState(false);
   const authToggleHandler = () => toggleAuth(!auth);
 
+  const [editProfile, setEditProfile] = useState(false);
+  const editProfileHandler = () => setEditProfile(!editProfile);
+
   return (
     <div
       className={`${styles.sidebarMenu} ${
@@ -37,11 +40,11 @@ const SidebarMenu = (props) => {
         />
       )}
 
-      {props.account && user.isLoggedIn && <Account />}
+      {props.account && user.isLoggedIn && !editProfile && <Account />}
 
       {props.account && user.isLoggedIn && (
         <>
-          <EditProfile />
+          <EditProfile onEdit={editProfileHandler} edit={editProfile} />
           <ChangePassword />
           <Logout onAccount={props.onAccount} />
         </>

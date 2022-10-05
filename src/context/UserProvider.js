@@ -4,12 +4,19 @@ import supabase from "../supabase";
 
 const UserProvider = (props) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [data, setUserData] = useState({});
+  const [data, setUserData] = useState(false);
   const [error, setUserError] = useState(false);
+
+  const getAccountData = async (user_id) => {
+    let { data } = await supabase.from("user").select("*").eq("id", user_id.id);
+    if (data) {
+      setUserData(data);
+    }
+  };
 
   useEffect(() => {
     if (localStorage.getItem("user"))
-      setUserData(JSON.parse(localStorage.getItem("user")));
+      getAccountData(JSON.parse(localStorage.getItem("user")));
   }, []);
 
   const loginHandler = (email, password) => {
@@ -19,7 +26,7 @@ const UserProvider = (props) => {
         password,
       });
       if (user) {
-        setUserData(user);
+        getAccountData(user.id);
         localStorage.setItem("user", JSON.stringify({ id: user.id }));
         setIsLoggedIn(true);
       }
@@ -34,10 +41,11 @@ const UserProvider = (props) => {
   const signupHandler = (email, password) => {
     const createUser = (id, email) => {
       const send = async () => {
-        const { error } = await supabase
+        const { error, data } = await supabase
           .from("user")
           .insert([{ id, email, name: email.split("@").shift() }]);
         if (error) console.log(error);
+        if (data) setUserData(data);
       };
       send();
     };
@@ -49,7 +57,6 @@ const UserProvider = (props) => {
       });
       if (user) {
         createUser(user.id, user.email);
-        setUserData(user);
         localStorage.setItem("user", JSON.stringify({ id: user.id }));
         setIsLoggedIn(true);
       }
@@ -62,6 +69,7 @@ const UserProvider = (props) => {
   };
 
   const signoutHandler = () => setIsLoggedIn(false);
+  const dataHandler = (newData) => setUserData(newData);
 
   const userCtx = {
     isLoggedIn: localStorage.getItem("user") ? true : isLoggedIn,
@@ -69,6 +77,7 @@ const UserProvider = (props) => {
     signupHandler,
     signoutHandler,
     data,
+    dataHandler,
     error,
   };
 
