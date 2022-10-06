@@ -9,6 +9,7 @@ import { useState } from "react";
 const Sidebar = (props) => {
   const [account, setAccount] = useState(false);
   const accountHandler = () => setAccount(!account);
+
   return (
     <UserProvider>
       <aside className={`${styles.sidebar} ${account ? styles.account : ""}`}>

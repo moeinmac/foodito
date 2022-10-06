@@ -1,3 +1,4 @@
+import React from "react";
 import styles from "./SidebarMenuItem.module.css";
 
 import { BsPhone } from "react-icons/bs";
@@ -133,4 +134,4 @@ const EditProfile = (props) => {
   );
 };
 
-export default EditProfile;
+export default React.memo(EditProfile);

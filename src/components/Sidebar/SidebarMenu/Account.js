@@ -1,3 +1,4 @@
+import React from "react";
 import styles from "./Account.module.css";
 
 import { useContext } from "react";
@@ -40,9 +41,7 @@ const Account = (props) => {
     <div className={styles.account}>
       <h3>Your Account : </h3>
 
-      <AccountItem
-        title={"Email"}
-        data={user.data[0].email ? user.data[0].email : "We Don't Know!"}>
+      <AccountItem title={"Email"} data={user.data[0].email}>
         <AiOutlineMail />
       </AccountItem>
       <AccountItem

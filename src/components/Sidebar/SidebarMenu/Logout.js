@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import React, { useState, useContext } from "react";
 import UserContext from "../../../context/UserContext";
 
 import styles from "./SidebarMenuItem.module.css";
@@ -46,4 +46,4 @@ const Logout = (props) => {
   );
 };
 
-export default Logout;
+export default React.memo(Logout);

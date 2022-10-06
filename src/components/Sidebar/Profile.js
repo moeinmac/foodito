@@ -1,16 +1,15 @@
 import styles from "./Profile.module.css";
 
-import { useContext } from "react";
+import React, { useContext } from "react";
 import UserContext from "../../context/UserContext";
 
 import GetProfile from "./GetProfile";
 
 import { GrClose } from "react-icons/gr";
 
-import supabase from "../../supabase";
-
 const Profile = (props) => {
   const user = useContext(UserContext);
+
   return (
     <div className={`${styles.profile} ${props.account ? styles.account : ""}`}>
       {user.isLoggedIn && <GetProfile user={user.data} />}
@@ -22,4 +21,4 @@ const Profile = (props) => {
   );
 };
 
-export default Profile;
+export default React.memo(Profile);

@@ -8,7 +8,6 @@ const UserProvider = (props) => {
   const [error, setUserError] = useState(false);
 
   const getAccountData = async (user_id) => {
-    console.log(user_id);
     let { data, error } = await supabase
       .from("user")
       .select("*")
@@ -19,7 +18,7 @@ const UserProvider = (props) => {
 
   useEffect(() => {
     if (localStorage.getItem("user"))
-      getAccountData(JSON.parse(localStorage.getItem("user")));
+      getAccountData(localStorage.getItem("user"));
   }, []);
 
   const loginHandler = (email, password) => {
