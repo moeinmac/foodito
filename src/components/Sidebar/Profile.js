@@ -9,7 +9,6 @@ import { GrClose } from "react-icons/gr";
 
 const Profile = (props) => {
   const user = useContext(UserContext);
-m 
   return (
     <div className={`${styles.profile} ${props.account ? styles.account : ""}`}>
       {user.isLoggedIn && <GetProfile user={user.data} />}
