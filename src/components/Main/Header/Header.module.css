@@ -5,7 +5,9 @@
   flex-wrap: wrap;
   gap: 1rem;
 }
-
+.header-title {
+  font-family: "Mitr";
+}
 .header-top {
   display: flex;
   align-items: center;
@@ -14,10 +16,24 @@
   gap: 1rem;
   position: relative;
 }
+
 .header-top .search {
   position: absolute;
   left: 10px;
   color: #8e8e8e;
+}
+@media (min-width: 600px) {
+  .header-top .search {
+    position: relative;
+    padding: 0.2em;
+    border-radius: 0.25em;
+    background-color: #b9bac7;
+    color: #323142;
+    font-size: 2.5rem;
+    left: auto;
+    cursor: pointer;
+    margin: 0 0 0 auto;
+  }
 }
 .header-top input {
   width: 83%;
@@ -35,6 +51,14 @@
   height: 44px;
   border-radius: 10px;
   background-color: var(--b-color);
-  padding: .5em;
+  padding: 0.5em;
   cursor: pointer;
+}
+.cart-button {
+  font-size: 2.5rem;
+  padding: 0.2em;
+  border-radius: 0.25em;
+  cursor: pointer;
+  background-color: #323142;
+  color: #fff;
 }

@@ -1,4 +1,4 @@
-import styles from "./CartButton.module.css";
+import styles from "./FixedCartButton.module.css";
 import Button from "../../../UI/Button";
 import { FiShoppingBag } from "react-icons/fi";
 import ReactDOM from "react-dom";
@@ -11,7 +11,9 @@ const FixedCartButton = (props) => {
       {ReactDOM.createPortal(
         <Button className={styles.fixedCartButton}>
           <span>$175.4</span>
-          <div>Cart <FiShoppingBag /></div>
+          <div>
+            Cart <FiShoppingBag />
+          </div>
         </Button>,
         overlay
       )}

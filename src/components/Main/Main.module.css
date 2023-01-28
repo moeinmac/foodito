@@ -1,0 +1,10 @@
+@media (min-width: 600px) {
+  .main {
+    grid-column: 2/7;
+    background-color: #fff;
+    margin: 1em;
+    padding: 1em;
+    border-radius: 1em;
+    font-family: "Nunito";
+  }
+}

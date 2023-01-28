@@ -9,6 +9,7 @@
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
   padding: 0.5rem;
 }
+
 .imgLoading {
   opacity: 0;
 }
@@ -31,4 +32,19 @@
   font-family: "Nunito";
   color: var(--g2-color);
   font-size: 0.9rem;
+}
+@media (min-width: 600px) {
+  .mealsItem {
+    flex-direction: column;
+    box-shadow: none;
+  }
+  .mealsItem-img {
+    width: 17vw;
+  }
+  .mealsItem-detail .title {
+    font-size: 1.3rem;
+  }
+  .mealsItem-detail .toppings {
+    font-size: 1rem;
+  }
 }

@@ -6,6 +6,12 @@
   align-items: center;
   justify-content: space-between;
 }
+@media (min-width: 600px) {
+  .sidebar {
+    grid-column: 1/2;
+  }
+}
+
 .account {
   background-color: #fff;
   align-items: flex-start;
