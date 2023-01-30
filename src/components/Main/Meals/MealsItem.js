@@ -1,7 +1,8 @@
 import AddToCartButton from "./AddToCartButton";
 import styles from "./MealsItem.module.css";
-import {LazyLoadImage} from "react-lazy-load-image-component";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useState } from "react";
+import { MobileView } from "react-device-detect";
 
 const MealsItem = (props) => {
   const [imgLoaded, setImgLoaded] = useState(false);
@@ -22,7 +23,9 @@ const MealsItem = (props) => {
           <div className={styles["mealsItem-detail"]}>
             <p className={styles["title"]}>{props.title}</p>
             <p className={styles["toppings"]}>{props.toppings.join(", ")}</p>
-            <AddToCartButton />
+            <MobileView>
+              <AddToCartButton />
+            </MobileView>
           </div>
         </>
       )}

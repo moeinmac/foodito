@@ -25,6 +25,6 @@ body {
 }
 @media (min-width: 600px) {
   #root {
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(8, 1fr);
   }
 }

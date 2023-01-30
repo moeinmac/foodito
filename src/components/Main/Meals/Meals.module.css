@@ -4,7 +4,7 @@
   font-family: "Mitr";
   padding: 1.5rem;
   padding-top: 0;
-  gap: 1rem;
+  gap: 1.5em 2em;
   position: relative;
 }
 @media (min-width: 600px) {
