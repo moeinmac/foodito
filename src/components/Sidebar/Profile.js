@@ -4,7 +4,6 @@ import GetProfile from "./GetProfile";
 import React, { useContext } from "react";
 import UserContext from "../../context/UserContext";
 import { GrClose } from "react-icons/gr";
-import MediaQuery from "react-responsive";
 
 const Profile = (props) => {
   const user = useContext(UserContext);
