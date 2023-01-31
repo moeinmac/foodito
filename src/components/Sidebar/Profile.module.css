@@ -29,6 +29,9 @@
   font-weight: 600;
   letter-spacing: 1px;
 }
+#dTitle {
+  display: none;
+}
 .account {
   width: 100%;
   align-items: center;
@@ -37,4 +40,12 @@
   font-size: 1.8rem;
   margin: 0 0 0 auto;
   cursor: pointer;
+}
+@media (min-width: 600px) {
+  .title {
+    display: none;
+  }
+  #dTitle {
+    display: block;
+  }
 }

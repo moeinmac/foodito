@@ -19,8 +19,8 @@
     align-items: center;
   }
   .filterMealsItem div {
-    width: 90px;
-    height: 90px;
+    width: auto;
+    height: 5vw;
     position: relative;
     overflow: hidden;
     border-radius: 50%;

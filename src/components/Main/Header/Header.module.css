@@ -7,6 +7,7 @@
 }
 .header-title {
   font-family: "Mitr";
+  display: none;
 }
 .header-top {
   display: flex;
@@ -22,19 +23,7 @@
   left: 10px;
   color: #8e8e8e;
 }
-@media (min-width: 600px) {
-  .header-top .search {
-    position: relative;
-    padding: 0.2em;
-    border-radius: 0.25em;
-    background-color: #b9bac7;
-    color: #323142;
-    font-size: 2.5rem;
-    left: auto;
-    cursor: pointer;
-    margin: 0 0 0 auto;
-  }
-}
+
 .header-top input {
   width: 83%;
   font-size: 1rem;
@@ -61,4 +50,21 @@
   cursor: pointer;
   background-color: #323142;
   color: #fff;
+}
+
+@media (min-width: 600px) {
+  .header-top .search {
+    position: relative;
+    padding: 0.2em;
+    border-radius: 0.25em;
+    background-color: #b9bac7;
+    color: #323142;
+    font-size: 2.5rem;
+    left: auto;
+    cursor: pointer;
+    margin: 0 0 0 auto;
+  }
+  .header-title {
+    display: block;
+  }
 }

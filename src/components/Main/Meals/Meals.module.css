@@ -4,32 +4,28 @@
   font-family: "Mitr";
   padding: 1.5rem;
   padding-top: 0;
-  gap: 1.5em 2em;
+  gap: 1.5em 1.5em;
   position: relative;
 }
-@media (min-width: 600px) {
-  .meals {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
 .meals-header {
   display: flex;
   align-items: center;
   width: 100%;
   justify-content: space-between;
 }
-@media (min-width: 600px) {
-  .meals-header {
-    justify-content: flex-start;
-    gap: 1.5em;
-    grid-column: 1/4;
-  }
-}
-
 .meals-header h2 {
   font-weight: 600;
 }
 .meals-header-icon {
   font-size: 2rem;
+}
+@media (min-width: 600px) {
+  .meals {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .meals-header {
+    justify-content: flex-start;
+    gap: 1.5em;
+    grid-column: 1/4;
+  }
 }

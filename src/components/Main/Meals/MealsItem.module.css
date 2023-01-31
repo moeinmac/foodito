@@ -8,6 +8,7 @@
   border-radius: 15px;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
   padding: 0.5rem;
+  width: 100%;
 }
 
 .imgLoading {
@@ -33,18 +34,30 @@
   color: var(--g2-color);
   font-size: 0.9rem;
 }
+.mealsItem-detail .bottom {
+  padding: 0.4em 0.5em 0 0;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  /* justify-content: flex-end; */
+}
 @media (min-width: 600px) {
   .mealsItem {
     flex-direction: column;
     box-shadow: none;
   }
   .mealsItem-img {
-    width: 17vw;
+    width: 15vw;
   }
   .mealsItem-detail .title {
     font-size: 1.3rem;
   }
   .mealsItem-detail .toppings {
     font-size: 1rem;
+  }
+  .mealsItem-detail .bottom {
+    padding: 0;
+    justify-content: space-between;
   }
 }
