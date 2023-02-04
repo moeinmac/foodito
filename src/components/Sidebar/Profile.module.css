@@ -1,6 +1,7 @@
 .profile {
   display: flex;
   gap: 0.5em;
+  width: 100%;
 }
 .profile-img {
   width: 15vw;
@@ -29,7 +30,7 @@
   font-weight: 600;
   letter-spacing: 1px;
 }
-#dTitle {
+.icon {
   display: none;
 }
 .account {
@@ -45,7 +46,43 @@
   .title {
     display: none;
   }
-  #dTitle {
-    display: block;
+  .icon {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    font-family: "Nunito";
+    gap: 1em;
+  }
+  .icon .icon-container {
+    width: 30%;
+  }
+  .icon-container img {
+    width: 100%;
+  }
+  .icon-detail {
+    display: flex;
+    flex-direction: column;
+  }
+  .icon-detail h1 {
+    font-family: "Mitr";
+  }
+  .profile {
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+  }
+  .profile-img {
+    width: 7vw;
+    height: 7vw;
+  }
+  .profile-img img {
+    border: 7px solid #fff;
+    border-radius: 2em;
+  }
+  .profile-detail p {
+    display: none;
+  }
+  .profile-detail span {
+    font-family: "Nunito";
   }
 }

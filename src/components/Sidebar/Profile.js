@@ -12,9 +12,18 @@ const Profile = (props) => {
       {user.isLoggedIn && <GetProfile user={user.data} />}
       {!user.isLoggedIn && <h1 className={styles.title}>Welcome to Foodito</h1>}
       {!user.isLoggedIn && (
-        <h1 className={styles.title} id={styles.dTitle}>
-          For complete your order create an account or login.
-        </h1>
+        <div className={styles.icon}>
+          <div className={styles["icon-container"]}>
+            <img
+              src="https://cgrqgisynruhcspvtobo.supabase.co/storage/v1/object/public/food/icon.png"
+              alt="Foodito"
+            />
+          </div>
+          <div className={styles["icon-detail"]}>
+            <h1>Foodito</h1>
+            <p>Best Food Delivery App</p>
+          </div>
+        </div>
       )}
       {props.account && user.isLoggedIn && (
         <GrClose className={styles.close} onClick={props.onAccount} />

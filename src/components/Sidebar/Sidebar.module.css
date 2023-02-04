@@ -20,5 +20,9 @@
   .sidebar {
     grid-column: 1/3;
     align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 1em;
   }
 }
