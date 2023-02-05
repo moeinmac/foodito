@@ -1,17 +1,17 @@
 import styles from "./Profile.module.css";
 import GetProfile from "./GetProfile";
 
-import React, { useContext } from "react";
-import UserContext from "../../context/UserContext";
+import React from "react";
 import { GrClose } from "react-icons/gr";
+import { useSelector } from "react-redux";
 
 const Profile = (props) => {
-  const user = useContext(UserContext);
+  const user = useSelector((state) => state.user);
   return (
     <div className={`${styles.profile} ${props.account ? styles.account : ""}`}>
-      {user.isLoggedIn && <GetProfile user={user.data} />}
-      {!user.isLoggedIn && <h1 className={styles.title}>Welcome to Foodito</h1>}
-      {!user.isLoggedIn && (
+      {user.isAuth && <GetProfile user={user.user} />}
+      {!user.isAuth && <h1 className={styles.title}>Welcome to Foodito</h1>}
+      {!user.isAuth && (
         <div className={styles.icon}>
           <div className={styles["icon-container"]}>
             <img
@@ -25,7 +25,7 @@ const Profile = (props) => {
           </div>
         </div>
       )}
-      {props.account && user.isLoggedIn && (
+      {props.account && user.isAuth && (
         <GrClose className={styles.close} onClick={props.onAccount} />
       )}
     </div>

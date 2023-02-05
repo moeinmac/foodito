@@ -1,12 +1,10 @@
 import React from "react";
 import styles from "./Account.module.css";
 
-import { useContext } from "react";
-import UserContext from "../../../context/UserContext";
-
 import { AiOutlineMail } from "react-icons/ai";
 import { BsPhone } from "react-icons/bs";
 import { BsClockHistory } from "react-icons/bs";
+import { useSelector } from "react-redux";
 
 function convertTZ(date, tzString) {
   return new Date(
@@ -35,23 +33,23 @@ const AccountItem = (props) => {
 };
 
 const Account = (props) => {
-  const user = useContext(UserContext);
+  const user = useSelector((state) => state.user.user);
 
   return (
     <div className={styles.account}>
       <h3>Your Account : </h3>
 
-      <AccountItem title={"Email"} data={user.data[0].email}>
+      <AccountItem title={"Email"} data={user.email}>
         <AiOutlineMail />
       </AccountItem>
       <AccountItem
         title={"Phone"}
-        data={user.data[0].phone ? `0${user.data[0].phone}` : "We Don't Know!"}>
+        data={user.phone ? `0${user.phone}` : "We Don't Know!"}>
         <BsPhone />
       </AccountItem>
       <AccountItem
         title={"Last Login"}
-        data={convertTZ(user.data[0].last_login, "Asia/Jakarta")}>
+        data={convertTZ(user.last_login, "Asia/Jakarta")}>
         <BsClockHistory />
       </AccountItem>
     </div>

@@ -12,11 +12,11 @@ const GetProfile = (props) => {
     userProfile && (
       <>
         <div className={styles["profile-img"]}>
-          <img src={userProfile[0].profile} alt="profile" />
+          <img src={userProfile.profile} alt="profile" />
         </div>
         <div className={styles["profile-detail"]}>
           <p>Hello</p>
-          <span>{userProfile[0].name}</span>
+          <span>{userProfile.name}</span>
         </div>
       </>
     )

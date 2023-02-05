@@ -4,10 +4,11 @@ import Modal from "../../../UI/Modal";
 import Button from "../../../UI/Button";
 import useInput from "../../../hooks/useInput";
 
-import { useContext, useState } from "react";
-import UserContext from "../../../context/UserContext";
+import { useState } from "react";
 
 import Input from "./Input";
+import { useDispatch, useSelector } from "react-redux";
+import { signInUser, signUpUser } from "../../../store/userSlice";
 
 const Auth = (props) => {
   const email = useInput(/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/);
@@ -15,9 +16,10 @@ const Auth = (props) => {
 
   const formIsValid = email.isValid && password.isValid;
 
-  const user = useContext(UserContext);
-  const userLogin = () => user.loginHandler(email.value, password.value);
-  const userSignup = () => user.signupHandler(email.value, password.value);
+  const dispatch = useDispatch();
+  const error = useSelector((state) => state.user.error);
+  const userLogin = () => dispatch(signInUser(email.value, password.value));
+  const userSignup = () => dispatch(signUpUser(email.value, password.value));
 
   const [loginForm, setLoginForm] = useState(true);
   const loginFormHandler = () => setLoginForm(!loginForm);
@@ -42,9 +44,7 @@ const Auth = (props) => {
           data={password}
         />
       </div>
-      {user.error && (
-        <p className={styles["error-message"]}>{user.error.message}</p>
-      )}
+      {error && <p className={styles["error-message"]}>{error.message}</p>}
       <div className={styles["button-container"]}>
         {loginForm && (
           <>

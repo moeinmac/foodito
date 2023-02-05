@@ -1,5 +1,4 @@
-import React, { useState, useContext } from "react";
-import UserContext from "../../../context/UserContext";
+import React, { useState } from "react";
 
 import styles from "./SidebarMenuItem.module.css";
 
@@ -9,16 +8,18 @@ import { GrCheckmark } from "react-icons/gr";
 import { GrClose } from "react-icons/gr";
 
 import supabase from "../../../supabase";
+import { useDispatch } from "react-redux";
+import { userAction } from "../../../store/userSlice";
 
 const Logout = (props) => {
   const [logout, setLogout] = useState(false);
   const logoutConfirmHandler = () => setLogout(!logout);
 
-  const user = useContext(UserContext);
+  const dispatch = useDispatch();
 
   const logoutHandler = async () => {
     let { error } = await supabase.auth.signOut();
-    user.signoutHandler();
+    dispatch(userAction.signOutUser());
     props.onAccount();
   };
 
