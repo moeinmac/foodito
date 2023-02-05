@@ -2,14 +2,11 @@ import styles from "./Meals.module.css";
 import { BsSliders } from "react-icons/bs";
 import MealsItem from "./MealsItem";
 import MealsLoader from "../../../UI/MealsLoader";
-import useFilterMeals from "../../../hooks/useFilterMeals";
-import { useContext } from "react";
-import MealsContext from "../../../context/MealsContext";
+import { useSelector } from "react-redux";
+import React from "react";
 
 const Meals = (props) => {
-  const { mealsValue } = useContext(MealsContext);
-  const { meals, loading } = useFilterMeals(mealsValue);
-
+  const { meals, loading } = useSelector((state) => state.meals);
   return (
     <div className={styles.meals}>
       <div className={styles["meals-header"]}>
@@ -17,8 +14,8 @@ const Meals = (props) => {
         <BsSliders className={styles["meals-header-icon"]} />
       </div>
       {loading &&
-        meals.map((key) => (
-          <MealsItem isLoading={true} key={key}>
+        meals.map(() => (
+          <MealsItem isLoading={true} key={Math.random()}>
             <MealsLoader />
           </MealsItem>
         ))}
@@ -27,7 +24,7 @@ const Meals = (props) => {
           <MealsItem
             isLoading={false}
             title={meal.title}
-            key={meal["product_id"]}
+            key={meal.id}
             price={meal.price}
             type={meal.type}
             img={meal.img}

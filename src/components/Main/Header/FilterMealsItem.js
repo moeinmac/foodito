@@ -1,13 +1,14 @@
 import Button from "../../../UI/Button";
 import styles from "./FilterMealsItem.module.css";
-import { useContext } from "react";
-import MealsContext from "../../../context/MealsContext";
 import MediaQuery from "react-responsive";
+import { useDispatch } from "react-redux";
+import { fetchMealsData, mealAction } from "../../../store/mealSlice";
 
 const FilterMealsItem = (props) => {
-  const { mealsFilter } = useContext(MealsContext);
+  const dispatch = useDispatch();
   const filterMealsHandler = () => {
-    mealsFilter(props.title.toLowerCase());
+    dispatch(mealAction.toggleLoading(true));
+    dispatch(fetchMealsData(props.title.toLowerCase()));
   };
 
   return (
