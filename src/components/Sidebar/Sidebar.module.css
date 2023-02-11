@@ -5,16 +5,19 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
-
-.account {
-  background-color: #fff;
-  align-items: flex-start;
+.sidebar-on {
   flex-direction: column;
-  gap: 1.5rem;
-  border-radius: 0 0 1rem 1rem;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  padding-bottom: 1.5rem;
+  background-color: #fff;
+  padding-bottom: 1.5em;
+  gap: 1em;
+}
+.sidebar-icon {
+  font-size: 2.2rem;
+  position: absolute;
+  right: 1em;
+  top: 1em;
 }
 @media (min-width: 600px) {
   .sidebar {
@@ -24,5 +27,8 @@
     justify-content: flex-start;
     width: 100%;
     gap: 1em;
+  }
+  .sidebar-on {
+    background-color: transparent;
   }
 }

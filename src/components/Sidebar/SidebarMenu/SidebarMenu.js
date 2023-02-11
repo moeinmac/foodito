@@ -1,13 +1,12 @@
 import styles from "./SidebarMenu.module.css";
-import { GrUserSettings } from "react-icons/gr";
 import { RiUserReceived2Line } from "react-icons/ri";
+import { CgHomeAlt, CgShoppingBag, CgLogOut } from "react-icons/cg";
+import { RiUser3Line } from "react-icons/ri";
 import MediaQuery from "react-responsive";
 
 import { useState } from "react";
 
 import Auth from "./Auth";
-import Logout from "./Logout";
-import Account from "./Account";
 import Button from "../../../UI/Button";
 import { useSelector } from "react-redux";
 
@@ -18,15 +17,8 @@ const SidebarMenu = (props) => {
   const authToggleHandler = () => toggleAuth(!auth);
 
   return (
-    <div
-      className={`${styles.sidebarMenu} ${
-        props.account ? styles.account : ""
-      }`}>
+    <nav className={`${styles.sidebarMenu}`}>
       {auth && !user.isAuth && <Auth onClose={authToggleHandler} />}
-
-      {user.isAuth && !props.account && (
-        <GrUserSettings onClick={props.onAccount} />
-      )}
 
       {!user.isAuth && (
         <MediaQuery maxWidth={600}>
@@ -39,14 +31,27 @@ const SidebarMenu = (props) => {
           <Button onClick={authToggleHandler}>Login / Signup</Button>
         </MediaQuery>
       )}
-      {props.account && user.isAuth && <Account />}
-
-      {props.account && user.isAuth && (
-        <>
-          <Logout onAccount={props.onAccount} />
-        </>
+      {props.sidebar && (
+        <ul>
+          <li>
+            <CgHomeAlt className={styles["sidebarMenu-icon"]} />
+            <span>Home</span>
+          </li>
+          <li>
+            <RiUser3Line className={styles["sidebarMenu-icon"]} />
+            <span>Account</span>
+          </li>
+          <li>
+            <CgShoppingBag className={styles["sidebarMenu-icon"]} />
+            <span>Orders</span>
+          </li>
+          <li>
+            <CgLogOut className={styles["sidebarMenu-icon"]} />
+            <span>Logout</span>
+          </li>
+        </ul>
       )}
-    </div>
+    </nav>
   );
 };
 
