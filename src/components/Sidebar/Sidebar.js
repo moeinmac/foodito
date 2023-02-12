@@ -4,7 +4,7 @@ import Profile from "./Profile";
 import SidebarMenu from "./SidebarMenu/SidebarMenu";
 
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { fetchUserData } from "../../store/userSlice";
 import { RiMenu2Fill } from "react-icons/ri";
 import { CgClose } from "react-icons/cg";
@@ -13,6 +13,7 @@ import MediaQuery from "react-responsive";
 import { useLocation } from "react-router-dom";
 
 const Sidebar = (props) => {
+  const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const location = useLocation();
 
@@ -39,7 +40,7 @@ const Sidebar = (props) => {
           <>
             <Profile text={"Hello"} />
             <SidebarMenu sidebar={sidebar} />
-            {!sidebar && (
+            {!sidebar && user.isAuth && (
               <RiMenu2Fill
                 className={styles["sidebar-icon"]}
                 onClick={sidebarHandler}

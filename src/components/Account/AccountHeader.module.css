@@ -1,7 +1,7 @@
 .accountHeader {
   display: flex;
-  font-family: "Nunito";
   flex-direction: column;
+  margin-bottom: 13.5em;
 }
 .accountHeader__container {
   position: absolute;
@@ -20,9 +20,7 @@
   font-size: 1.8rem;
   margin-left: 0.5em;
 }
-.accountHeader__container h1 {
-  font-family: "Mitr";
-}
+
 .profile {
   display: flex;
   align-items: center;
@@ -35,17 +33,16 @@
   top: 13%;
 }
 .profile-img {
-  width: 20vw;
-  height: 20vw;
+  width: 20vw !important;
+  height: 20vw !important;
 }
 .profile-img img {
-  border-radius: 2.5em;
+  border-radius: 2.5em !important;
   border: 5px solid #d7d0d0;
 }
 button {
   background-color: transparent;
   border: none;
   outline: none;
-  font-family: "Nunito";
   color: inherit;
 }

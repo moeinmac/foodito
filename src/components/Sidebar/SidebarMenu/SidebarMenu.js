@@ -23,7 +23,10 @@ const SidebarMenu = (props) => {
 
       {!user.isAuth && (
         <MediaQuery maxWidth={600}>
-          <RiUserReceived2Line onClick={authToggleHandler} />
+          <RiUserReceived2Line
+            onClick={authToggleHandler}
+            className={styles.authIcon}
+          />
         </MediaQuery>
       )}
       {!user.isAuth && (
@@ -32,7 +35,7 @@ const SidebarMenu = (props) => {
           <Button onClick={authToggleHandler}>Login / Signup</Button>
         </MediaQuery>
       )}
-      {props.sidebar && (
+      {props.sidebar && user.isAuth && (
         <ul>
           <NavLink
             to={"/"}

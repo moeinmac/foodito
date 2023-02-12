@@ -32,6 +32,10 @@
 .sidebarMenu__active .sidebarMenu-icon {
   color: #5b69ee;
 }
+.authIcon {
+  font-size: 2.5rem;
+  margin: 0 0 0 auto;
+}
 @media (min-width: 600px) {
   .sidebarMenu {
     font-size: 1rem;

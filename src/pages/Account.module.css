@@ -1,0 +1,13 @@
+.title {
+  padding: 0 1em;
+}
+.accountItemsContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 1em 1.2em;
+  gap: 1em;
+}
+.accountItemIcon {
+  font-size: 1.8rem;
+  color: #b9bac7;
+}

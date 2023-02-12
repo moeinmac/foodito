@@ -11,6 +11,10 @@ a {
   text-decoration: none;
   color: inherit;
 }
+h1,
+h2 {
+  font-family: "Mitr";
+}
 :root {
   --bg-color: #eaeaea;
   --b-color: #5b69ee;
