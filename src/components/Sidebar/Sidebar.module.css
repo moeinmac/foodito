@@ -12,12 +12,14 @@
   background-color: #fff;
   padding-bottom: 1.5em;
   gap: 1em;
+  border-radius: 0 0 1em 1em;
 }
 .sidebar-icon {
   font-size: 2.2rem;
   position: absolute;
   right: 1em;
   top: 1em;
+  z-index: 99;
 }
 @media (min-width: 600px) {
   .sidebar {

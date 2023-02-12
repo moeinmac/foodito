@@ -10,14 +10,21 @@ import { RiMenu2Fill } from "react-icons/ri";
 import { CgClose } from "react-icons/cg";
 
 import MediaQuery from "react-responsive";
+import { useLocation } from "react-router-dom";
 
 const Sidebar = (props) => {
   const dispatch = useDispatch();
+  const location = useLocation();
 
   useEffect(() => {
     if (localStorage.getItem("user"))
       dispatch(fetchUserData(JSON.parse(localStorage.getItem("user"))));
   }, [dispatch]);
+  useEffect(() => {
+    if (location.pathname === "/account" || location.pathname === "/") {
+      setSidebar(false);
+    }
+  }, [location]);
 
   const [sidebar, setSidebar] = useState(false);
   const sidebarHandler = () => {
@@ -27,23 +34,28 @@ const Sidebar = (props) => {
   return (
     <aside
       className={`${styles.sidebar} ${sidebar ? styles["sidebar-on"] : ""}`}>
-      <Profile />
       <MediaQuery maxWidth={600}>
-        <SidebarMenu sidebar={sidebar} />
-        {!sidebar && (
-          <RiMenu2Fill
-            className={styles["sidebar-icon"]}
-            onClick={sidebarHandler}
-          />
-        )}
-        {sidebar && (
-          <CgClose
-            className={styles["sidebar-icon"]}
-            onClick={sidebarHandler}
-          />
+        {location.pathname === "/" && (
+          <>
+            <Profile text={"Hello"} />
+            <SidebarMenu sidebar={sidebar} />
+            {!sidebar && (
+              <RiMenu2Fill
+                className={styles["sidebar-icon"]}
+                onClick={sidebarHandler}
+              />
+            )}
+            {sidebar && (
+              <CgClose
+                className={styles["sidebar-icon"]}
+                onClick={sidebarHandler}
+              />
+            )}
+          </>
         )}
       </MediaQuery>
       <MediaQuery minWidth={600}>
+        <Profile />
         <SidebarMenu sidebar={true} />
       </MediaQuery>
     </aside>

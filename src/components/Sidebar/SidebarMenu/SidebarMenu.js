@@ -3,6 +3,7 @@ import { RiUserReceived2Line } from "react-icons/ri";
 import { CgHomeAlt, CgShoppingBag, CgLogOut } from "react-icons/cg";
 import { RiUser3Line } from "react-icons/ri";
 import MediaQuery from "react-responsive";
+import { NavLink } from "react-router-dom";
 
 import { useState } from "react";
 
@@ -33,22 +34,33 @@ const SidebarMenu = (props) => {
       )}
       {props.sidebar && (
         <ul>
-          <li>
+          <NavLink
+            to={"/"}
+            className={({ isActive }) =>
+              isActive ? styles["sidebarMenu__active"] : ""
+            }>
             <CgHomeAlt className={styles["sidebarMenu-icon"]} />
             <span>Home</span>
-          </li>
-          <li>
+          </NavLink>
+
+          <NavLink
+            to={"/account"}
+            className={({ isActive }) =>
+              isActive ? styles["sidebarMenu__active"] : ""
+            }>
             <RiUser3Line className={styles["sidebarMenu-icon"]} />
             <span>Account</span>
-          </li>
-          <li>
+          </NavLink>
+
+          <NavLink>
             <CgShoppingBag className={styles["sidebarMenu-icon"]} />
             <span>Orders</span>
-          </li>
-          <li>
+          </NavLink>
+
+          <NavLink>
             <CgLogOut className={styles["sidebarMenu-icon"]} />
             <span>Logout</span>
-          </li>
+          </NavLink>
         </ul>
       )}
     </nav>

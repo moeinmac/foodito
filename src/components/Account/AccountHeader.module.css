@@ -1,0 +1,51 @@
+.accountHeader {
+  display: flex;
+  font-family: "Nunito";
+  flex-direction: column;
+}
+.accountHeader__container {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  padding: 1.5em;
+  padding-bottom: 5.5em;
+  background-color: #5b69ee;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 0 0 1.5em 1.5em;
+}
+.accountHeader__container .icon {
+  font-size: 1.8rem;
+  margin-left: 0.5em;
+}
+.accountHeader__container h1 {
+  font-family: "Mitr";
+}
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  flex-direction: column;
+  position: absolute;
+  width: auto;
+  transform: translateX(-50%);
+  left: 50%;
+  top: 13%;
+}
+.profile-img {
+  width: 20vw;
+  height: 20vw;
+}
+.profile-img img {
+  border-radius: 2.5em;
+  border: 5px solid #d7d0d0;
+}
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-family: "Nunito";
+  color: inherit;
+}

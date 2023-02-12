@@ -10,16 +10,27 @@
   flex-direction: column;
   gap: 0.5em;
 }
-.sidebarMenu ul li {
+.sidebarMenu a {
+  text-decoration: none;
+  color: #323142;
+}
+.sidebarMenu ul a {
   display: flex;
-  padding: 0.3em 0.5em;
+  padding: 0.4em 0.5em;
   align-items: center;
-  gap: 0.5em;
-  border: 2px solid gray;
-  border-radius: 0.5em;
+  gap: 0.6em;
 }
 .sidebarMenu-icon {
   font-size: 1.5rem;
+  color: #b9bac7;
+}
+.sidebarMenu__active {
+  background-color: #ebecf4;
+  border-radius: 0.5em;
+  color: #5b69ee !important;
+}
+.sidebarMenu__active .sidebarMenu-icon {
+  color: #5b69ee;
 }
 @media (min-width: 600px) {
   .sidebarMenu {
@@ -27,16 +38,31 @@
     display: flex;
     gap: 1em;
     align-items: center;
-    font-size: 1.8rem;
+    flex-direction: column;
+    font-size: 1.7rem;
   }
   .sidebarMenu-icon {
-    font-size: 2rem;
+    font-size: 4rem;
+    background-color: #fff;
+    color: #cdbfbf;
+    padding: 0.2em;
+    border-radius: 0.25em;
   }
   .sidebarMenu ul {
-    width: 100%;
+    gap: 0.8em;
   }
-  .sidebarMenu ul li {
-    border: none;
+  .sidebarMenu ul a {
+    padding: 0em 1em 0 0;
+    border-radius: 0.7em;
+    gap: 0.8em;
+  }
+  .sidebarMenu__active {
+    background-color: #a4adf3;
+    color: #fff !important;
+  }
+  .sidebarMenu__active .sidebarMenu-icon {
+    background-color: #8a94f3;
+    color: #fff;
   }
   .sidebarMenu button {
     font-size: 1.2rem;

@@ -8,8 +8,14 @@ import { useSelector } from "react-redux";
 const Profile = (props) => {
   const user = useSelector((state) => state.user);
   return (
-    <div className={`${styles.profile} ${props.account ? styles.account : ""}`}>
-      {user.isAuth && <GetProfile user={user.user} />}
+    <div className={styles.profile}>
+      {user.isAuth && (
+        <GetProfile
+          user={user.user}
+          text={props.text}
+          className={props.className}
+        />
+      )}
       {!user.isAuth && <h1 className={styles.title}>Welcome to Foodito</h1>}
       {!user.isAuth && (
         <div className={styles.icon}>

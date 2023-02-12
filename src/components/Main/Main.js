@@ -1,9 +1,12 @@
 import { useDispatch } from "react-redux";
 import { fetchMealsData } from "../../store/mealSlice";
-import Header from "./Header/Header";
 import styles from "./Main.module.css";
-import Meals from "./Meals/Meals";
 import { useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
+
+import Home from "../../pages/Home";
+import Account from "../../pages/Account";
+import Cart from "../../pages/Cart";
 
 const Main = (props) => {
   const dispatch = useDispatch();
@@ -13,8 +16,11 @@ const Main = (props) => {
 
   return (
     <main className={styles.main}>
-      <Header />
-      <Meals />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/account" element={<Account />} />
+        <Route path="/cart" element={<Cart />} />
+      </Routes>
     </main>
   );
 };
