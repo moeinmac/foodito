@@ -4,6 +4,8 @@ import { useSelector } from "react-redux";
 import { IoReturnUpBackOutline } from "react-icons/io5";
 import { RiUser6Line } from "react-icons/ri";
 import GetProfile from "../Sidebar/GetProfile";
+import MediaQuery from "react-responsive";
+import HeaderCartButton from "../Main/Header/HeaderCartButton";
 
 const AccountHeader = () => {
   const user = useSelector((state) => state.user.user);
@@ -22,9 +24,21 @@ const AccountHeader = () => {
         </button>
         <h1>Account</h1>
         <RiUser6Line className={styles.icon} />
+        <MediaQuery minWidth={600}>
+          <HeaderCartButton />
+        </MediaQuery>
       </div>
       <div className={styles.profile}>
-        <GetProfile user={user} className={styles["profile-img"]} />
+        <MediaQuery minWidth={600}>
+          <GetProfile
+            user={user}
+            id={styles["new-profile-img"]}
+            text={"Tehran , Iran"}
+          />
+        </MediaQuery>
+        <MediaQuery maxWidth={600}>
+          <GetProfile user={user} id={styles["new-profile-img"]} />
+        </MediaQuery>
       </div>
     </header>
   );

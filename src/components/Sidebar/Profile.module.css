@@ -79,9 +79,6 @@
     border: 7px solid #fff;
     border-radius: 2em;
   }
-  .profile-detail p {
-    display: none;
-  }
   .profile-detail span {
     font-family: "Nunito";
   }

@@ -1,9 +1,15 @@
 import styles from "./AccountItem.module.css";
+import MediaQuery from "react-responsive";
 
 const AccountItem = (props) => {
   return (
     <div className={styles.accountItem}>
-      <div className={styles["accountItem-icon"]}>{props.children}</div>
+      <MediaQuery minWidth={600}>
+        <span>{props.title}</span>
+      </MediaQuery>
+      <MediaQuery maxWidth={600}>
+        <div className={styles["accountItem-icon"]}>{props.children}</div>
+      </MediaQuery>
       <p>{props.data}</p>
     </div>
   );

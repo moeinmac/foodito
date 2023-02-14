@@ -2,11 +2,11 @@ import styles from "./Header.module.css";
 
 import { RiSearchLine } from "react-icons/ri";
 import { FiSliders } from "react-icons/fi";
-import { ImCart } from "react-icons/im";
 
 import FilterMeals from "./FilterMeals";
 import FixedCartButton from "./FixedCartButton";
 import MediaQuery from "react-responsive";
+import HeaderCartButton from "./HeaderCartButton";
 
 const Header = (props) => {
   return (
@@ -19,7 +19,7 @@ const Header = (props) => {
           <FiSliders className={styles.sliders} />
         </MediaQuery>
         <MediaQuery minWidth={600}>
-          <ImCart className={styles["cart-button"]} />
+          <HeaderCartButton />
         </MediaQuery>
       </div>
       <FilterMeals />

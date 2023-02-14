@@ -11,3 +11,11 @@
   font-size: 1.8rem;
   color: #b9bac7;
 }
+@media (min-width: 600px) {
+  .title {
+    display: none;
+  }
+  .accountItemsContainer {
+    gap: 2em;
+  }
+}

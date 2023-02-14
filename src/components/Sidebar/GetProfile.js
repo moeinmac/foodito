@@ -3,11 +3,11 @@ import styles from "./Profile.module.css";
 const GetProfile = (props) => {
   return (
     <>
-      <div className={`${styles["profile-img"]} ${props.className}`}>
+      <div className={styles["profile-img"]} id={props.id}>
         <img src={props.user.profile} alt="profile" />
       </div>
       <div className={styles["profile-detail"]}>
-        <p>{props.text}</p>
+        {props.text !== "" && <p>{props.text}</p>}
         <span>{props.user.name}</span>
       </div>
     </>

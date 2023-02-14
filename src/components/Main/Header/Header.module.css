@@ -43,14 +43,6 @@
   padding: 0.5em;
   cursor: pointer;
 }
-.cart-button {
-  font-size: 2.5rem;
-  padding: 0.2em;
-  border-radius: 0.25em;
-  cursor: pointer;
-  background-color: #323142;
-  color: #fff;
-}
 
 @media (min-width: 600px) {
   .header-top .search {

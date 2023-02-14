@@ -1,0 +1,8 @@
+.cart-button {
+  font-size: 2.5rem;
+  padding: 0.2em;
+  border-radius: 0.25em;
+  cursor: pointer;
+  background-color: #323142;
+  color: #fff;
+}

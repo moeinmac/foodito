@@ -10,6 +10,7 @@ import { useSelector } from "react-redux";
 import { IoMdMail } from "react-icons/io";
 import { BsPhoneFill, BsFillClockFill } from "react-icons/bs";
 import { ImLocation2 } from "react-icons/im";
+import MediaQuery from "react-responsive";
 
 const Account = () => {
   const user = useSelector((state) => state.user.user);
@@ -18,20 +19,24 @@ const Account = () => {
       <AccountHeader />
       <h1 className={styles.title}>Account Detail</h1>
       <div className={styles.accountItemsContainer}>
-        <AccountItem data={user.email}>
+        <AccountItem data={user.email} title={"Email"}>
           <IoMdMail className={styles["accountItemIcon"]} />
         </AccountItem>
-        <AccountItem data={user.phone}>
+        <AccountItem data={user.phone} title={"Phone"}>
           <BsPhoneFill className={styles["accountItemIcon"]} />
         </AccountItem>
-        <AccountItem data={convertTZ(user.last_login, "Asia/Jakarta")}>
+        <AccountItem
+          data={convertTZ(user.last_login, "Asia/Jakarta")}
+          title={"Last Login"}>
           <BsFillClockFill className={styles["accountItemIcon"]} />
         </AccountItem>
-        <AccountItem data={convertAddress(user.address)}>
+        <AccountItem data={convertAddress(user.address)} title={"Address"}>
           <ImLocation2 className={styles["accountItemIcon"]} />
         </AccountItem>
       </div>
-      <FixedCartButton />
+      <MediaQuery maxWidth={600}>
+        <FixedCartButton />
+      </MediaQuery>
     </>
   );
 };
