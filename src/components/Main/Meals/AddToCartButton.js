@@ -5,15 +5,19 @@ import "./AddToCartButton.css";
 import { TfiShoppingCart, TfiShoppingCartFull } from "react-icons/tfi";
 import { BsBoxSeam } from "react-icons/bs";
 
+import { useDispatch } from "react-redux";
+import { cartActions } from "../../../store/cartSlice";
+
 import MediaQuery from "react-responsive";
 
 const AddToCartButton = (props) => {
   const [isAdd, setAdd] = useState(false);
-
+  const dispatch = useDispatch();
   const addToCartHandler = () => {
     if (!isAdd) {
       setAdd(true);
       setTimeout(() => setAdd(false), 3700);
+      dispatch(cartActions.addCart(props.id));
     }
   };
 

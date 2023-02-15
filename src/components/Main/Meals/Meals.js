@@ -7,6 +7,8 @@ import React from "react";
 
 const Meals = (props) => {
   const { meals, loading } = useSelector((state) => state.meals);
+  const cart = useSelector((state) => state.cart);
+  console.log(cart);
   return (
     <div className={styles.meals}>
       <div className={styles["meals-header"]}>
@@ -29,6 +31,7 @@ const Meals = (props) => {
             type={meal.type}
             img={meal.img}
             toppings={meal.toppings}
+            id={meal.id}
           />
         ))}
     </div>

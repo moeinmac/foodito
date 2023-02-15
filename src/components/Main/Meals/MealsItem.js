@@ -16,7 +16,7 @@ const MealsItem = (props) => {
             <p className={styles["toppings"]}>{props.toppings.join(", ")}</p>
             <div className={styles["bottom"]}>
               <p className={styles["price"]}>${props.price}</p>
-              <AddToCartButton />
+              <AddToCartButton id={props.id} />
             </div>
           </div>
         </>
