@@ -6,29 +6,25 @@ const mealSlice = createSlice({
   initialState: {
     meals: [0, 1, 2, 3],
     loading: true,
+    filterValue: "all",
   },
   reducers: {
     setData(state, action) {
       state.meals = action.payload;
+    },
+    setFilter(state, action) {
+      state.filterValue = action.payload;
     },
     toggleLoading(state, action) {
       state.loading = action.payload;
     },
   },
 });
-export const fetchMealsData = (value) => {
+export const fetchMealsData = () => {
   return async (dispatch) => {
     const fetchData = async () => {
-      if (value === "all") {
-        let { data } = await supabase.from("food").select("*");
-        return data;
-      } else {
-        let { data } = await supabase
-          .from("food")
-          .select("*")
-          .eq("type", value);
-        return data;
-      }
+      let { data } = await supabase.from("food").select("*");
+      return data;
     };
     try {
       const mealsData = await fetchData();

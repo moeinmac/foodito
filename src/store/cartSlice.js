@@ -10,10 +10,12 @@ const cartSlice = createSlice({
   },
   reducers: {
     setCart(state, action) {
+      let tq = 0;
+      for (let item of action.payload) {
+        tq += item.quantity;
+      }
       state.items = action.payload;
-      // action.payload.forEach((item) => {
-      //   state.totalQuantity += item.quantity;
-      // });
+      state.totalQuantity = tq;
     },
     addCart(state, action) {
       const existingItem = state.items.find(

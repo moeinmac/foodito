@@ -6,9 +6,11 @@ import { useSelector } from "react-redux";
 import React from "react";
 
 const Meals = (props) => {
-  const { meals, loading } = useSelector((state) => state.meals);
-  const cart = useSelector((state) => state.cart);
-  console.log(cart);
+  const { meals, loading, filterValue } = useSelector((state) => state.meals);
+  const filteredMeals = meals.filter((meal) => {
+    if (filterValue === "all") return meals;
+    return meal.type === filterValue;
+  });
   return (
     <div className={styles.meals}>
       <div className={styles["meals-header"]}>
@@ -22,7 +24,7 @@ const Meals = (props) => {
           </MealsItem>
         ))}
       {!loading &&
-        meals.map((meal) => (
+        filteredMeals.map((meal) => (
           <MealsItem
             isLoading={false}
             title={meal.title}

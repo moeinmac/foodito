@@ -15,10 +15,12 @@ const Main = (props) => {
   const user = useSelector((state) => state.user.user);
   const cart = useSelector((state) => state.cart);
   useEffect(() => {
-    dispatch(fetchMealsData("all"));
+    dispatch(fetchMealsData());
   }, [dispatch]);
   useEffect(() => {
-    dispatch(cartActions.setCart(user.cart));
+    if (user.cart) {
+      dispatch(cartActions.setCart(user.cart));
+    }
   }, [dispatch, user.cart]);
   useEffect(() => {
     if (cart.isChanged) {
