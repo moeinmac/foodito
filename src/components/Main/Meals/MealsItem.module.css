@@ -15,7 +15,7 @@
   opacity: 0;
 }
 .mealsItem-img {
-  width: 40vw;
+  width: 37vw;
 }
 .mealsItem-img img {
   max-width: 100%;
@@ -32,7 +32,7 @@
 .mealsItem-detail .toppings {
   font-family: "Nunito";
   color: var(--g2-color);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
 }
 .mealsItem-detail .bottom {
   padding: 0.4em 0.5em 0 0;

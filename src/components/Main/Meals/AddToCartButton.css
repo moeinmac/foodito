@@ -1,11 +1,11 @@
 /* Not By Me */
 
 .addToCart {
-  margin: 0 0 0 auto;
+  /* margin: 0 0 0 auto; */
   position: relative;
   border: none;
   background: none;
-  padding: 8px 28px;
+  padding: 8px 24px;
   border-radius: 8px;
   -webkit-appearance: none;
   -webkit-tap-highlight-color: transparent;
@@ -13,7 +13,7 @@
   overflow: hidden;
   cursor: pointer;
   text-align: center;
-  min-width: 144px;
+  width: 135px;
   color: #fff;
   background: var(--b-color);
   transform: scale(var(--scale, 1));
@@ -23,7 +23,7 @@
   --scale: 0.95;
 }
 .addToCart span {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500;
   display: block;
   position: relative;

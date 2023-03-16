@@ -1,5 +1,5 @@
 import styles from "./Account.module.css";
-import FixedCartButton from "../components/Main/Header/FixedCartButton";
+import FixedCartButton from "../UI/FixedCartButton";
 import AccountHeader from "../components/Account/AccountHeader";
 import AccountItem, {
   convertTZ,

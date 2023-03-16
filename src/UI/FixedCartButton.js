@@ -1,8 +1,9 @@
 import styles from "./FixedCartButton.module.css";
-import Button from "../../../UI/Button";
+import Button from "./Button";
 import { FiShoppingBag } from "react-icons/fi";
 import ReactDOM from "react-dom";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const overlay = document.querySelector("#overlay");
 
@@ -16,18 +17,25 @@ const FixedCartButton = (props) => {
       const singleMeals = meals.find((meal) => meal.id === item.id);
       tp += singleMeals.price * item.quantity;
     });
-    return tp;
+    return Number(tp).toFixed(1);
   };
 
   return (
     <>
       {ReactDOM.createPortal(
-        <Button className={styles.fixedCartButton}>
-          <span>${!loading && totalPrice()}</span>
-          <div>
+        <Link to={"/cart"} className={styles.fixedCartButton}>
+          <div className={styles.cartButtonDetail}>
+            {props.isTq && (
+              <span className={styles.tq}>
+                Total : {cart.totalQuantity} items
+              </span>
+            )}
+            <span className={styles.tp}>${!loading && totalPrice()}</span>
+          </div>
+          <div className={styles.cartButtonIcon}>
             Cart <FiShoppingBag />
           </div>
-        </Button>,
+        </Link>,
         overlay
       )}
     </>

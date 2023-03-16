@@ -6,6 +6,7 @@
   padding-top: 0;
   gap: 1.5em 1.5em;
   position: relative;
+  margin-bottom: 3em;
 }
 .meals-header {
   display: flex;
@@ -22,6 +23,7 @@
 @media (min-width: 600px) {
   .meals {
     grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 0;
   }
   .meals-header {
     justify-content: flex-start;

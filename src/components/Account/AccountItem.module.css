@@ -34,5 +34,6 @@
     padding: 0 0.2em;
     background-color: #fff;
     font-family: "Mitr";
+    user-select: none;
   }
 }

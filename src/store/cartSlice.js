@@ -37,11 +37,19 @@ const cartSlice = createSlice({
         (item) => item.id === action.payload
       );
       state.totalQuantity--;
-      if (existingItem.quantity === 1) {
-        state.items.filter((item) => item.id !== action.payload);
+      if (existingItem.quantity == 1) {
+        state.items = state.items.filter((item) => item.id !== action.payload);
       } else {
         existingItem.quantity--;
       }
+      state.isChanged = true;
+    },
+    deleteCart(state, action) {
+      const existingItem = state.items.find(
+        (item) => item.id === action.payload
+      );
+      state.totalQuantity -= existingItem.quantity;
+      state.items = state.items.filter((item) => item.id !== action.payload);
       state.isChanged = true;
     },
   },
@@ -57,7 +65,6 @@ export const sendCartData = (cart, userId) => {
       return { data, error };
     };
     const { data, error } = await sendData();
-    if (data) console.log(data);
   };
 };
 

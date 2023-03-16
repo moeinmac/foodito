@@ -8,14 +8,24 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: var(--b-color);
+  color: #fff;
 }
-.fixedCartButton span {
+.cartButtonDetail {
+  display: flex;
+  flex-direction: column;
+}
+.fixedCartButton .tp {
   font-family: "Mitr";
   font-weight: 700;
   font-size: 2rem;
   letter-spacing: 3px;
 }
-.fixedCartButton div {
+.fixedCartButton .tq {
+  font-family: "Nunito";
+  font-size: 1rem;
+}
+.fixedCartButton .cartButtonIcon {
   background-color: #fff;
   color: var(--b-color);
   padding: 0.5rem;

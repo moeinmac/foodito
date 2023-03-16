@@ -4,7 +4,7 @@ import { RiSearchLine } from "react-icons/ri";
 import { FiSliders } from "react-icons/fi";
 
 import FilterMeals from "./FilterMeals";
-import FixedCartButton from "./FixedCartButton";
+import FixedCartButton from "../../../UI/FixedCartButton";
 import MediaQuery from "react-responsive";
 import HeaderCartButton from "./HeaderCartButton";
 
