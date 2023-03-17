@@ -40,11 +40,14 @@
   position: relative;
   z-index: 2;
 }
-.cart-item-detail {
+.cart-item-container {
   display: flex;
   flex-direction: column;
   width: 100%;
   padding: 0.7em 1.5em 0.7em 0.5em;
+}
+.cart-item-price {
+  font-family: "Nunito";
 }
 .cart-item-footer {
   display: flex;
@@ -66,4 +69,38 @@
   align-items: center;
   padding: 0.2em 0.7em;
   gap: 1.2em;
+}
+@media (min-width: 600px) {
+  .cart-item {
+    background-color: transparent;
+    margin-bottom: 0.5em;
+  }
+  .cart-item:last-child {
+    margin-bottom: 0;
+  }
+  .cart-item-close {
+    display: none;
+  }
+  .cart-item-img img {
+    width: 7vw;
+    position: relative;
+    z-index: 2;
+  }
+  .cart-item-img__backdrop {
+    display: none;
+  }
+  .cart-item-container {
+    flex-direction: row;
+    /* justify-content: space-between; */
+    align-items: center;
+  }
+  .cart-item-footer {
+    margin: 0;
+    flex-grow: 2;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+  }
+  .cart-item-detail {
+    width: 51.5%;
+  }
 }

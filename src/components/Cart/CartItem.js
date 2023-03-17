@@ -10,6 +10,7 @@ const CartItem = (props) => {
   const addCartHandler = () => dispatch(cartActions.addCart(props.id));
   const removeCartHandler = () => dispatch(cartActions.removeCart(props.id));
   const deleteCartHandler = () => dispatch(cartActions.deleteCart(props.id));
+
   return (
     <div className={styles["cart-item"]}>
       <button className={styles["cart-item-close"]} onClick={deleteCartHandler}>
@@ -19,11 +20,13 @@ const CartItem = (props) => {
         <div className={styles["cart-item-img__backdrop"]}></div>
         <img src={props.img} />
       </div>
-      <div className={styles["cart-item-detail"]}>
-        <h2>{props.title}</h2>
-        <span className={styles["cart-item-price"]}>
-          Price : {props.price}$
-        </span>
+      <div className={styles["cart-item-container"]}>
+        <div className={styles["cart-item-detail"]}>
+          <h2>{props.title}</h2>
+          <span className={styles["cart-item-price"]}>
+            Price : {props.price}$
+          </span>
+        </div>
         <div className={styles["cart-item-footer"]}>
           <p className={styles["cart-item-total-price"]}>
             {Number(props.price * props.quantity).toFixed(1)}$
