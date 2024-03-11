@@ -4,6 +4,7 @@ const GetProfile = (props) => {
   return (
     <>
       <div className={styles["profile-img"]} id={props.id}>
+        {props.children}
         <img src={props.user.profile} alt="profile" />
       </div>
       <div className={styles["profile-detail"]}>

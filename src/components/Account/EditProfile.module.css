@@ -1,0 +1,45 @@
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  flex-direction: column;
+  z-index: 5;
+  padding-top: 3.5em;
+  cursor: pointer;
+}
+#edit-profile {
+  width: 17vw;
+  height: 17vw;
+}
+#edit-profile img {
+  border-radius: 1.9em;
+  border: 4px solid #d7d0d0;
+}
+.icon{
+  font-size: 1.4rem;
+  background-color: #D7D0D0;
+  padding: 0.12em;
+  border: 2px solid #B3B3B3;
+  border-radius: 0.3em;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+@media (min-width : 600px) {
+  .icon{
+    font-size: 2rem;
+  }
+  #edit-profile {
+    width: 8.5vw;
+    height: 8.5vw;
+  }
+  #edit-profile img {
+    border: none;
+    border-radius: 1.5em;
+  }
+  .profile {
+    align-self: flex-start;
+    flex-direction: row;
+    padding-top: 0em;
+  }
+}

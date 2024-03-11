@@ -6,6 +6,7 @@ import { RiUser6Line } from "react-icons/ri";
 import GetProfile from "../Sidebar/GetProfile";
 import MediaQuery from "react-responsive";
 import HeaderCartButton from "../Main/Header/HeaderCartButton";
+import EditProfile from "./EditProfile";
 
 const AccountHeader = () => {
   const user = useSelector((state) => state.user.user);
@@ -26,18 +27,12 @@ const AccountHeader = () => {
         <RiUser6Line className={styles.icon} />
         <HeaderCartButton />
       </div>
-      <div className={styles.profile}>
-        <MediaQuery minWidth={600}>
-          <GetProfile
-            user={user}
-            id={styles["acc-profile"]}
-            text={"Tehran , Iran"}
-          />
-        </MediaQuery>
-        <MediaQuery maxWidth={600}>
-          <GetProfile user={user} id={styles["acc-profile"]} />
-        </MediaQuery>
-      </div>
+      <MediaQuery minWidth={600}>
+        <EditProfile user={user} text={"Tehran , Iran"} />
+      </MediaQuery>
+      <MediaQuery maxWidth={600}>
+        <EditProfile user={user} />
+      </MediaQuery>
     </header>
   );
 };

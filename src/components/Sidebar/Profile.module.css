@@ -6,6 +6,7 @@
 .profile-img {
   width: 15vw;
   height: 15vw;
+  position: relative;
 }
 .profile-img img {
   max-width: 100%;
