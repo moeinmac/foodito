@@ -4,11 +4,11 @@ import Profile from "./Profile";
 import SidebarMenu from "./SidebarMenu/SidebarMenu";
 
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { fetchUserData } from "../../store/userSlice";
 import { RiMenu2Fill } from "react-icons/ri";
 import { CgClose } from "react-icons/cg";
 
+import { useDispatch, useSelector } from "react-redux";
 import MediaQuery from "react-responsive";
 import { useLocation } from "react-router-dom";
 
@@ -34,7 +34,8 @@ const Sidebar = (props) => {
 
   return (
     <aside
-      className={`${styles.sidebar} ${sidebar ? styles["sidebar-on"] : ""}`}>
+      className={`${styles.sidebar} ${sidebar ? styles["sidebar-on"] : ""}`}
+    >
       <MediaQuery maxWidth={600}>
         {location.pathname === "/" && (
           <>

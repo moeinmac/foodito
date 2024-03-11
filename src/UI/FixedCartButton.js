@@ -1,5 +1,5 @@
 import styles from "./FixedCartButton.module.css";
-import Button from "./Button";
+
 import { FiShoppingBag } from "react-icons/fi";
 import ReactDOM from "react-dom";
 import { useSelector } from "react-redux";

@@ -2,8 +2,9 @@
   font-family: "Nunito";
   font-size: 1.3rem;
   cursor: pointer;
-  width: 100%;
 }
+.sidebarMenu_isAuth{width: 100%;}
+
 .sidebarMenu ul {
   list-style: none;
   display: flex;

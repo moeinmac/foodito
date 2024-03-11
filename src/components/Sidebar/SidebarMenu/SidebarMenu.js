@@ -18,7 +18,11 @@ const SidebarMenu = (props) => {
   const authToggleHandler = () => toggleAuth(!auth);
 
   return (
-    <nav className={`${styles.sidebarMenu}`}>
+    <nav
+      className={`${styles.sidebarMenu} ${
+        user.isAuth ? styles.sidebarMenu_isAuth : ""
+      }`}
+    >
       {auth && !user.isAuth && <Auth onClose={authToggleHandler} />}
 
       {!user.isAuth && (
@@ -41,7 +45,8 @@ const SidebarMenu = (props) => {
             to={"/"}
             className={({ isActive }) =>
               isActive ? styles["sidebarMenu__active"] : ""
-            }>
+            }
+          >
             <CgHomeAlt className={styles["sidebarMenu-icon"]} />
             <span>Home</span>
           </NavLink>
@@ -50,7 +55,8 @@ const SidebarMenu = (props) => {
             to={"/account"}
             className={({ isActive }) =>
               isActive ? styles["sidebarMenu__active"] : ""
-            }>
+            }
+          >
             <RiUser3Line className={styles["sidebarMenu-icon"]} />
             <span>Account</span>
           </NavLink>
