@@ -6,3 +6,6 @@
   background-color: #323142;
   color: #fff;
 }
+@media (max-width: 600px) {
+  .cart-button_container{display: none;}
+}

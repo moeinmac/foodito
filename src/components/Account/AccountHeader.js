@@ -24,20 +24,18 @@ const AccountHeader = () => {
         </button>
         <h1>Account</h1>
         <RiUser6Line className={styles.icon} />
-        <MediaQuery minWidth={600}>
-          <HeaderCartButton />
-        </MediaQuery>
+        <HeaderCartButton />
       </div>
       <div className={styles.profile}>
         <MediaQuery minWidth={600}>
           <GetProfile
             user={user}
-            id={styles["new-profile-img"]}
+            id={styles["acc-profile"]}
             text={"Tehran , Iran"}
           />
         </MediaQuery>
         <MediaQuery maxWidth={600}>
-          <GetProfile user={user} id={styles["new-profile-img"]} />
+          <GetProfile user={user} id={styles["acc-profile"]} />
         </MediaQuery>
       </div>
     </header>

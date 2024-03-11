@@ -1,14 +1,14 @@
 .accountHeader {
   display: flex;
   flex-direction: column;
-  margin-bottom: 13.5em;
+  margin-bottom: 1em;
 }
 .accountHeader__container {
-  position: absolute;
+  position: fixed;
   top: 0px;
   width: 100%;
   padding: 1.5em;
-  padding-bottom: 5.5em;
+  padding-bottom: 4.5em;
   background-color: #5b69ee;
   color: #fff;
   display: flex;
@@ -26,19 +26,16 @@
   align-items: center;
   gap: 0.5em;
   flex-direction: column;
-  position: absolute;
-  width: auto;
-  transform: translateX(-50%);
-  left: 50%;
-  top: 13%;
+  z-index: 5;
+  padding-top: 3.5em;
 }
-#new-profile-img {
-  width: 20vw;
-  height: 20vw;
+#acc-profile {
+  width: 17vw;
+  height: 17vw;
 }
-#new-profile-img img {
-  border-radius: 2.5em;
-  border: 5px solid #d7d0d0;
+#acc-profile img {
+  border-radius: 1.5em;
+  border: 4px solid #d7d0d0;
 }
 button {
   background-color: transparent;
@@ -68,16 +65,14 @@ button {
     font-size: 2rem;
   }
   .profile {
-    position: static;
-    transform: none;
     align-self: flex-start;
     flex-direction: row;
   }
-  #new-profile-img {
+  #acc-profile {
     width: 8.5vw;
     height: 8.5vw;
   }
-  #new-profile-img img {
+  #acc-profile img {
     border: none;
     border-radius: 1.5em;
   }

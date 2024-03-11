@@ -17,7 +17,6 @@ const Account = () => {
   return (
     <>
       <AccountHeader />
-      <h1 className={styles.title}>Account Detail</h1>
       <div className={styles.accountItemsContainer}>
         <AccountItem data={user.email} title={"Email"}>
           <IoMdMail className={styles["accountItemIcon"]} />

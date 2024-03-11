@@ -7,10 +7,10 @@ const HeaderCartButton = () => {
   const [toggleCart, setToggleCart] = useState(false);
   const cartToggleHandler = () => setToggleCart(!toggleCart);
   return (
-    <>
+    <div className={styles["cart-button_container"]}>
       <ImCart className={styles["cart-button"]} onClick={cartToggleHandler} />
       {toggleCart && <CartDesktop onClose={cartToggleHandler} />}
-    </>
+    </div>
   );
 };
 
