@@ -101,5 +101,23 @@ export const signUpUser = (email, password) => {
   };
 };
 
+export const UpdateUser = (id, value) => {
+  return async (dispatch) => {
+    const fetchData = async () => {
+      const { data, error } = await supabase
+        .from("user")
+        .update({ profile: value })
+        .eq("id", id)
+        .select();
+      return { data, error };
+    };
+    try {
+      const { data, error } = await fetchData();
+      if (data) dispatch(userSlice.actions.setUser(...data));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
 export const userAction = userSlice.actions;
 export default userSlice;
