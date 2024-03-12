@@ -28,3 +28,19 @@
 .icon{
   font-size: 1.5rem;
 }
+@media (min-width : 600px){
+  .container {
+    position: absolute;
+    top: 13vh;
+    right: 0;
+  }
+  .item:first-child{
+    border: none;
+    background-color: #b9bac7;
+    border-radius: 1em;
+    cursor: pointer;
+  }
+  .icon{
+    display: none;
+  }
+}
