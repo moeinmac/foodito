@@ -19,13 +19,9 @@ const userSlice = createSlice({
     },
     setError(state, action) {
       state.error = action.payload;
+      state.user = []
       state.isAuth = false;
       if (localStorage.getItem("user")) localStorage.removeItem("user");
-    },
-    signOutUser(state) {
-      state.user = [];
-      state.isAuth = false;
-      localStorage.removeItem("user");
     },
   },
 });
@@ -117,6 +113,17 @@ export const UpdateUser = (id, updatedData) => {
     } catch (error) {
       console.log(error);
     }
+  };
+};
+
+export const Signout = () => {
+  return async (dispatch) => {
+    const fetchData = async () => {
+      const { error } = await supabase.auth.signOut();
+      return error
+    };
+    const error = await fetchData();
+    dispatch(userSlice.actions.setError([]));
   };
 };
 export const userAction = userSlice.actions;
