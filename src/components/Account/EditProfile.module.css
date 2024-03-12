@@ -3,7 +3,6 @@
   align-items: center;
   gap: 0.5em;
   flex-direction: column;
-  z-index: 5;
   padding-top: 3.5em;
   cursor: pointer;
 }
@@ -25,6 +24,7 @@
   bottom: 0;
   right: 0;
 }
+.uploadInput { display: none;}
 @media (min-width : 600px) {
   .icon{
     font-size: 2rem;

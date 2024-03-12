@@ -101,12 +101,12 @@ export const signUpUser = (email, password) => {
   };
 };
 
-export const UpdateUser = (id, value) => {
+export const UpdateUser = (id, updatedData) => {
   return async (dispatch) => {
     const fetchData = async () => {
       const { data, error } = await supabase
         .from("user")
-        .update({ profile: value })
+        .update(updatedData)
         .eq("id", id)
         .select();
       return { data, error };
