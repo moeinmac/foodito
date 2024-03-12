@@ -6,6 +6,7 @@ import MediaQuery from "react-responsive";
 import { NavLink } from "react-router-dom";
 
 import { useState } from "react";
+import useSignout from "../../../hooks/useSignout";
 
 import Auth from "./Auth";
 import Button from "../../../UI/Button";
@@ -16,6 +17,8 @@ const SidebarMenu = (props) => {
 
   const [auth, toggleAuth] = useState(false);
   const authToggleHandler = () => toggleAuth(!auth);
+
+  const signout = useSignout();
 
   return (
     <nav
@@ -66,7 +69,7 @@ const SidebarMenu = (props) => {
             <span>Orders</span>
           </NavLink>
 
-          <NavLink>
+          <NavLink onClick={signout.ok}>
             <CgLogOut className={styles["sidebarMenu-icon"]} />
             <span>Logout</span>
           </NavLink>

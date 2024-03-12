@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { IoReturnUpBackOutline } from "react-icons/io5";
 import { RiUser6Line } from "react-icons/ri";
-import GetProfile from "../Sidebar/GetProfile";
+
 import MediaQuery from "react-responsive";
 import HeaderCartButton from "../Main/Header/HeaderCartButton";
 import EditProfile from "./EditProfile";

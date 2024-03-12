@@ -1,18 +1,10 @@
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { Signout } from "../../store/userSlice";
-
+import useSignout from "../../hooks/useSignout";
 
 const Logout = (props) => {
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
+  const signout = useSignout();
 
-  const logoutHandler = () => {
-    dispatch(Signout());
-    navigate("/")
-  }
   return (
-    <div className={props.className} onClick={logoutHandler}>
+    <div className={props.className} onClick={signout.ok}>
       Logout {props.children}
     </div>
   );
