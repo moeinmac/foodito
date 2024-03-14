@@ -10,7 +10,7 @@ const AccountItem = (props) => {
       <MediaQuery maxWidth={600}>
         <div className={styles["accountItem-icon"]}>{props.children}</div>
       </MediaQuery>
-      <p>{props.data}</p>
+      <p className={styles.data}>{props.data}</p>
     </div>
   );
 };
