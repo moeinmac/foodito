@@ -5,9 +5,8 @@
   border-radius: 0.5em;
   font-size: 1.1rem;
 }
-.accountItem-icon {
+.icon {
   display: flex;
-
   align-items: stretch;
   padding: 0.4em 0.8em;
 }
@@ -37,4 +36,12 @@
     font-family: "Mitr";
     user-select: none;
   }
+}
+
+.editIcon{
+  font-size: 1.8rem;
+  color: #b9bac7;
+}
+.input input{
+  border-bottom: none;
 }

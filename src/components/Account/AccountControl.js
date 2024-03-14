@@ -14,7 +14,7 @@ import editSlice from "../../store/editSlice";
 const AccountControl = () => {
   const edit = useSelector((state) => state.edit);
   const dispatch = useDispatch();
-  const discardHandler = () => dispatch(editSlice.actions.toggleEditing());
+  const discardHandler = () => dispatch(editSlice.actions.discardEdit());
 
   if (edit.Editing) {
     return (

@@ -5,13 +5,21 @@ const editSlice = createSlice({
   initialState: {
     Editing: false,
     EditValid: false,
+    EditingPhone : false,
   },
   reducers: {
-    toggleEditing(state) {
-      state.Editing = !state.Editing;
+    setEditing(state) {
+      state.Editing = true;
     },
     toggleEditValid(state){
       state.EditValid = !state.EditValid
+    },
+    setEditPhone(state){
+      state.EditingPhone =true
+    },
+    discardEdit(state){
+      state.Editing = false
+      state.EditingPhone = false
     }
   },
 });

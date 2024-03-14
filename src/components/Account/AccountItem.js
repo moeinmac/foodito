@@ -3,12 +3,12 @@ import MediaQuery from "react-responsive";
 
 const AccountItem = (props) => {
   return (
-    <div className={styles.accountItem}>
+    <div className={styles.accountItem} onClick={props.onClick}>
       <MediaQuery minWidth={600}>
         <span>{props.title}</span>
       </MediaQuery>
       <MediaQuery maxWidth={600}>
-        <div className={styles["accountItem-icon"]}>{props.children}</div>
+        <div className={styles["icon"]}>{props.children}</div>
       </MediaQuery>
       <p className={styles.data}>{props.data}</p>
     </div>

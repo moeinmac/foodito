@@ -6,7 +6,7 @@ import useInput from "../../../hooks/useInput";
 
 import { useState } from "react";
 
-import Input from "./Input";
+import Input from "../../../UI/Input";
 import { useDispatch, useSelector } from "react-redux";
 import { signInUser, signUpUser } from "../../../store/userSlice";
 
