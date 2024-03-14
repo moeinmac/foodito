@@ -28,6 +28,18 @@
 .icon{
   font-size: 1.5rem;
 }
+.editing{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em 1.2em;
+}
+.editing button{
+  font-size: 1.2rem;
+}
+.discardButton { 
+  background-color: crimson;
+}
 @media (min-width : 600px){
   .container {
     position: absolute;
