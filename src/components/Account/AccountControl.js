@@ -25,7 +25,7 @@ const AccountControl = () => {
     (edit.PhoneValid && edit.LocationValid);
 
   const updateAccountHandler = () => {
-    dispatch(UpdateUser(id, { phone: edit.PhoneValue }))
+    dispatch(UpdateUser(id, { phone: edit.PhoneValue }));
     dispatch(editSlice.actions.discardEdit());
   };
 
@@ -47,6 +47,9 @@ const AccountControl = () => {
       <EditAccount className={styles.item}>
         <RxCaretRight className={styles.icon} />
       </EditAccount>
+      <Link className={styles.item} to="/account/address">
+        Manage Address <RxCaretRight className={styles.icon} />
+      </Link>
 
       <MediaQuery maxWidth={600}>
         <Link className={styles.item} to="/">

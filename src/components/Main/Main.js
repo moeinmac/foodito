@@ -9,6 +9,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from "../../pages/Home";
 import Account from "../../pages/Account";
 import Cart from "../../pages/Cart";
+import Address from "../../pages/Address";
 
 const Main = (props) => {
   const dispatch = useDispatch();
@@ -32,6 +33,7 @@ const Main = (props) => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/account" element={<Account />} />
+        <Route path="/account/address" element={<Address />} />
         <Route path="/cart" element={<Cart />} />
       </Routes>
     </main>

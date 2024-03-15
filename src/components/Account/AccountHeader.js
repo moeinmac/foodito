@@ -8,12 +8,12 @@ import MediaQuery from "react-responsive";
 import HeaderCartButton from "../Main/Header/HeaderCartButton";
 import EditProfile from "./EditProfile";
 
-const AccountHeader = () => {
+const AccountHeader = (props) => {
   const user = useSelector((state) => state.user.user);
   const navigate = useNavigate();
 
   const backClickHandler = () => {
-    navigate("/");
+    navigate(props.back || "/");
   };
 
   return (
