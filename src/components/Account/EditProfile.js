@@ -32,21 +32,21 @@ const EditProfile = (props) => {
   return (
     <>
       {isLoading && <PanLoader />}
-      <label className={styles.profile} htmlFor="uploadInput">
+      <div className={styles.profile}>
         <GetProfile
           user={props.user}
           id={styles["edit-profile"]}
           text={props.text}
         >
-          <MdOutlineModeEdit className={styles.icon} />
+          {edit.Editing && <MdOutlineModeEdit className={styles.icon} />}
         </GetProfile>
-        <input
+        {edit.Editing && <input
           type="file"
           onChange={uploadProfileHandler}
           id="uploadInput"
           className={styles.uploadInput}
-        />
-      </label>
+        />}
+      </div>
     </>
   );
 };
