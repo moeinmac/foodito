@@ -29,9 +29,7 @@ const AccountMain = () => {
         </AccountItem>
       )}
 
-      {
-        (edit.Editing && edit.EditingPhone) && <EditPhone />
-      }
+      {edit.Editing && edit.EditingPhone && <EditPhone />}
 
       <AccountItem
         data={convertTZ(user.last_login, "Asia/Jakarta")}

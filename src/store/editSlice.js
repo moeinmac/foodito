@@ -4,15 +4,17 @@ const editSlice = createSlice({
   name: "edit",
   initialState: {
     Editing: false,
-    EditValid: false,
     EditingPhone : false,
+    PhoneValid: false,
+    PhoneValue : ""
   },
   reducers: {
     setEditing(state) {
       state.Editing = true;
     },
-    toggleEditValid(state){
-      state.EditValid = !state.EditValid
+    setPhoneValid(state,action){
+      state.PhoneValid = true
+      state.PhoneValue = action.payload
     },
     setEditPhone(state){
       state.EditingPhone =true

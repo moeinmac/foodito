@@ -10,11 +10,24 @@ import { Link } from "react-router-dom";
 import MediaQuery from "react-responsive";
 import { useSelector, useDispatch } from "react-redux";
 import editSlice from "../../store/editSlice";
+import { UpdateUser } from "../../store/userSlice";
 
 const AccountControl = () => {
   const edit = useSelector((state) => state.edit);
   const dispatch = useDispatch();
   const discardHandler = () => dispatch(editSlice.actions.discardEdit());
+
+  const id = useSelector((state) => state.user.user.id);
+
+  const EditValid =
+    (!edit.EditingLocation && edit.PhoneValid) ||
+    (!edit.EditingPhone && edit.LocationValid) ||
+    (edit.PhoneValid && edit.LocationValid);
+
+  const updateAccountHandler = () => {
+    dispatch(UpdateUser(id, { phone: edit.PhoneValue }))
+    dispatch(editSlice.actions.discardEdit());
+  };
 
   if (edit.Editing) {
     return (
@@ -22,10 +35,13 @@ const AccountControl = () => {
         <Button className={styles.discardButton} onClick={discardHandler}>
           Discard
         </Button>
-        <Button>Save Changes</Button>
+        <Button disabled={!EditValid} onClick={updateAccountHandler}>
+          Save Changes
+        </Button>
       </div>
     );
   }
+
   return (
     <div className={styles.container}>
       <EditAccount className={styles.item}>

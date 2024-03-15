@@ -43,5 +43,5 @@
   color: #b9bac7;
 }
 .input input{
-  border-bottom: none;
+  border-bottom: none !important;
 }
