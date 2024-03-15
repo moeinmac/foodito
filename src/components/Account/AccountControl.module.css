@@ -41,10 +41,14 @@
   background-color: crimson;
 }
 @media (min-width : 600px){
-  .container {
+  .container ,.editing{
     position: absolute;
     top: 13vh;
     right: 0;
+  }
+  .editing{
+    top: 15vh;
+    gap: 2em;
   }
   .item:first-child{
     border: none;
