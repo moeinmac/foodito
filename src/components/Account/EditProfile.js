@@ -4,10 +4,11 @@ import GetProfile from "../Sidebar/GetProfile";
 import { useState } from "react";
 import supabase from "../../supabase";
 import { UpdateUser } from "../../store/userSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch,useSelector } from "react-redux";
 import PanLoader from "../../UI/PanLoader";
 
 const EditProfile = (props) => {
+  const edit = useSelector((state) => state.edit);
   const [isLoading, setLoading] = useState();
   const dispatch = useDispatch();
 

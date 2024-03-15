@@ -9,7 +9,6 @@ import editSlice from "../../store/editSlice";
 const EditPhone = () => {
   const phone = useInput(/((0?9)|(\+?989))\d{9}/g);
   const dispatch = useDispatch();
-  console.log(phone.value);
   if(phone.isValid) dispatch(editSlice.actions.setPhoneValid(phone.value));
 
   return (

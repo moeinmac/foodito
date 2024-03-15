@@ -6,22 +6,27 @@ const userSlice = createSlice({
   initialState: {
     isAuth: false,
     user: [],
+    account: [],
     error: [],
   },
   reducers: {
-    setAuth(state, action) {
-      state.isAuth = action.payload;
-    },
     setUser(state, action) {
       state.user = action.payload;
       state.isAuth = true;
-      localStorage.setItem("user", JSON.stringify(action.payload.id));
+      const supabase = JSON.parse(localStorage.getItem("supabase.auth.token"))
+        .currentSession.user;
+      state.account = {
+        id: supabase.id,
+        email: supabase.email,
+        last_login: supabase.last_sign_in_at,
+      };
     },
     setError(state, action) {
       state.error = action.payload;
-      state.user = []
+      state.user = [];
       state.isAuth = false;
-      if (localStorage.getItem("user")) localStorage.removeItem("user");
+      if (localStorage.getItem("supabase.auth.token"))
+        localStorage.removeItem("supabase.auth.token");
     },
   },
 });
@@ -65,7 +70,7 @@ const createUser = (id, email) => {
     const fetchData = async () => {
       const { error, data } = await supabase
         .from("user")
-        .insert([{ id, email, name: email.split("@").shift() }]);
+        .insert([{ id, name: email.split("@").shift() }]);
       return { error, data };
     };
     try {
@@ -120,7 +125,7 @@ export const Signout = () => {
   return async (dispatch) => {
     const fetchData = async () => {
       const { error } = await supabase.auth.signOut();
-      return error
+      return error;
     };
     const error = await fetchData();
     dispatch(userSlice.actions.setError([]));

@@ -18,8 +18,13 @@ const Sidebar = (props) => {
   const location = useLocation();
 
   useEffect(() => {
-    if (localStorage.getItem("user"))
-      dispatch(fetchUserData(JSON.parse(localStorage.getItem("user"))));
+    if (localStorage.getItem("supabase.auth.token"))
+      dispatch(
+        fetchUserData(
+          JSON.parse(localStorage.getItem("supabase.auth.token")).currentSession
+            .user.id
+        )
+      );
   }, [dispatch]);
   useEffect(() => {
     if (location.pathname === "/account" || location.pathname === "/") {
