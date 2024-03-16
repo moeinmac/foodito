@@ -9,7 +9,7 @@
   margin: 0 auto;
 }
 .container p{
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   padding:0 .5em;
 }
 .container button{
@@ -23,16 +23,17 @@
 .editItem span{
   position: absolute;
   top: -0.5em;
-  left: 1em;
+  left: 1.2em;
   background-color: #fff;
   padding: 0 0.2em;
+  font-size: 0.8em;
 }
 .editItem input{
-  font-size: 1.2rem;
+  font-size: 1rem;
   width: 100%;
   border-radius: 1em;
-  padding:.7em 0.6em 0.7em 0.6em;
-  border: 3px solid var(--g-color);
+  padding:0.5em 1em;
+  border: 2px solid var(--g-color);
 }
 .editButton{
   display: flex;
@@ -47,7 +48,20 @@
   border-radius: 0.625em;
 }
 .container .item{
-  border: 3px solid var(--g-color);
-  border-radius: 0.8em;
   padding: 0.2em 0.6em;
+}
+@media (min-width: 600px){
+  .container{
+    flex-direction: row;
+    align-items: center;
+  }
+  .container img{
+    max-width: 30vw;
+  }
+  .editButton{
+    position: absolute;
+    top: 120px;
+    right: 15px;
+    gap: 1em;
+  }
 }
