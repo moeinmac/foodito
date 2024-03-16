@@ -34,13 +34,4 @@ export const convertTZ = (date, tzString) => {
   } catch (error) {}
 };
 
-export const convertAddress = (address) => {
-  let value = "";
-  for (const key in address) {
-    if (address[key] !== "") {
-      value += `${key}: ${address[key]}, `;
-    }
-  }
-  return value;
-};
 export default AccountItem;

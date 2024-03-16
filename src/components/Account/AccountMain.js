@@ -2,12 +2,11 @@ import styles from "./AccountMain.module.css";
 
 import { IoMdMail } from "react-icons/io";
 import { BsPhoneFill, BsFillClockFill } from "react-icons/bs";
-import { ImLocation2 } from "react-icons/im";
 
 import { useSelector, useDispatch } from "react-redux";
 import editSlice from "../../store/editSlice";
 
-import AccountItem, { convertTZ, convertAddress } from "./AccountItem";
+import AccountItem, { convertTZ } from "./AccountItem";
 import EditPhone from "./EditPhone";
 
 const AccountMain = () => {
@@ -39,10 +38,6 @@ const AccountMain = () => {
       >
         <BsFillClockFill className={styles["accountItemIcon"]} />
       </AccountItem>
-
-      {/* <AccountItem data={convertAddress(user.address)} title={"Address"}>
-        <ImLocation2 className={styles["accountItemIcon"]} />
-      </AccountItem> */}
     </div>
   );
 };

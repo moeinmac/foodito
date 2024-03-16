@@ -23,7 +23,7 @@ const AccountHeader = (props) => {
           <IoReturnUpBackOutline />
           back
         </button>
-        <h1>Account</h1>
+        <h1>{props.header}</h1>
         <RiUser6Line className={styles.icon} />
         <HeaderCartButton />
       </div>

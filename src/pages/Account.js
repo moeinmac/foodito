@@ -13,11 +13,11 @@ const Account = () => {
   const navigate = useNavigate();
   useEffect(() => {
     if(!localStorage.getItem("supabase.auth.token")) navigate("/")
-  }, []);
+  }, [navigate]);
 
   return (
     <div className={styles.account}>
-      <AccountHeader />
+      <AccountHeader header="Account"/>
       <AccountMain />
       <AccountControl />
 
