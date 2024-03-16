@@ -4,6 +4,10 @@
   padding: 0 1em;
   gap: 1em;
 }
+.container img{
+  max-width: 40vh;
+  margin: 0 auto;
+}
 .container p{
   font-size: 1.5rem;
   padding:0 .5em;
@@ -24,7 +28,7 @@
   padding: 0 0.2em;
 }
 .editItem input{
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   width: 100%;
   border-radius: 1em;
   padding:.7em 0.6em 0.7em 0.6em;
@@ -41,4 +45,9 @@
   font-size: 1.5rem;
   color: #fff;
   border-radius: 0.625em;
+}
+.container .item{
+  border: 3px solid var(--g-color);
+  border-radius: 0.8em;
+  padding: 0.2em 0.6em;
 }
