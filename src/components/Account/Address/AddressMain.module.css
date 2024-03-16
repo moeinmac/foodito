@@ -11,3 +11,34 @@
 .container button{
   font-size: 1.5rem;
 }
+.editItem{
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.editItem span{
+  position: absolute;
+  top: -0.5em;
+  left: 1em;
+  background-color: #fff;
+  padding: 0 0.2em;
+}
+.editItem input{
+  font-size: 1.3rem;
+  width: 100%;
+  border-radius: 1em;
+  padding:.7em 0.6em 0.7em 0.6em;
+  border: 3px solid var(--g-color);
+}
+.editButton{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.editButton a{
+  padding: 0.5rem 1rem;
+  background-color: crimson;
+  font-size: 1.5rem;
+  color: #fff;
+  border-radius: 0.625em;
+}

@@ -1,22 +1,18 @@
 import { useSelector } from "react-redux";
 import styles from "./AddressMain.module.css";
 import Button from "../../../UI/Button";
-
-// export const convertAddress = (address) => {
-//   let value = "";
-//   for (const key in address) {
-//     if (address[key] !== "") {
-//       value += `• ${key}: ${address[key]} `;
-//     }
-//   }
-//   return value;
-// };
+import EditAddress from "./EditAddress";
+import { useState } from "react";
 
 const AddressMain = () => {
   const address = useSelector((state) => state.user.user.address);
-  console.log(address);
-  const editAddressHandler = () => {}
-  if (address) {
+  const [editAddress, setEditAddress] = useState();
+
+  const editAddressHandler = () => setEditAddress(!editAddress);
+  if(editAddress){
+    return <EditAddress address={address}/>
+  }
+  if (!address.set) {
     return (
       <div className={styles.container}>
         <img
